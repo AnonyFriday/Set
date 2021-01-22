@@ -13,19 +13,16 @@ class GameVC : UIViewController {
     
     
     override func viewDidLoad() {
-        
+        updateUIFromModel()
     }
     
     
     // MARK: Interface Builder
-    @IBOutlet var customButtonCard: [UIButton]!
-    
-    @IBAction func touchUpButtonCard(_ sender: UIButton) {
+    @IBOutlet var customButtonCard: [KDButton]!
+    @IBAction func touchUpButtonCard(_ sender: KDButton) {
         guard let index = customButtonCard.firstIndex(of: sender) else {
             return
         }
-        print(customButtonCard.count)
-        print(gameSet.displayedCards.count)
         let card = gameSet.displayedCards[index]
         gameSet.select(card: card)
         updateUIFromModel()
@@ -33,8 +30,13 @@ class GameVC : UIViewController {
     
     
     func updateUIFromModel() {
-    
+        for index in 0..<gameSet.displayedCards.count {
+            let (button, card) = (customButtonCard[index], gameSet.displayedCards[index])
+            
+            // TODO: Drawing card into button
+        }
     }
     
+   
     
 }

@@ -11,7 +11,7 @@ protocol Convertable {
     static var allSelectors : [(Card) -> Attribute] { get }
 }
 
-struct Card: CustomStringConvertible
+struct Card: CustomStringConvertible, Hashable
 {
     
     var description: String {
@@ -31,7 +31,6 @@ struct Card: CustomStringConvertible
         self.quantity = quantity
         self.shape    = shape
     }
-
 }
 
 extension Card: Convertable
@@ -39,6 +38,4 @@ extension Card: Convertable
     static var allSelectors: [(Card) -> Attribute] {
         return [{$0.color}, {$0.quantity}, {$0.shading}, {$0.shape}]
     }
-    
-    
 }

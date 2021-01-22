@@ -31,8 +31,4 @@ class CardDeck {
         }
         return cardDeck.remove(at: cardDeck.count.arc4random)
     }
-    
-    
-    
-    
 }

@@ -18,6 +18,8 @@
 		5CCCF0FA25BA492B007D0ECF /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF0F925BA492B007D0ECF /* GameVC.swift */; };
 		5CCCF10525BA5DE3007D0ECF /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF10425BA5DE3007D0ECF /* Attribute.swift */; };
 		5CCCF10C25BA6518007D0ECF /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF10B25BA6518007D0ECF /* Int+Ext.swift */; };
+		5CCCF11425BAAC68007D0ECF /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF11325BAAC68007D0ECF /* Collection+Ext.swift */; };
+		5CCCF11725BAC0EB007D0ECF /* KDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF11625BAC0EB007D0ECF /* KDButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		5CCCF0F925BA492B007D0ECF /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		5CCCF10425BA5DE3007D0ECF /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		5CCCF10B25BA6518007D0ECF /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
+		5CCCF11325BAAC68007D0ECF /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
+		5CCCF11625BAC0EB007D0ECF /* KDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				5CCCF0F925BA492B007D0ECF /* GameVC.swift */,
+				5CCCF11625BAC0EB007D0ECF /* KDButton.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				5CCCF10B25BA6518007D0ECF /* Int+Ext.swift */,
+				5CCCF11325BAAC68007D0ECF /* Collection+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -216,12 +222,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CCCF11725BAC0EB007D0ECF /* KDButton.swift in Sources */,
 				5CCCF0F225BA48CA007D0ECF /* CardDeck.swift in Sources */,
 				5C63A7E825B82A560054729C /* AppDelegate.swift in Sources */,
 				5CCCF0EF25BA48C2007D0ECF /* Card.swift in Sources */,
 				5C63A7FF25B82A890054729C /* GameSet.swift in Sources */,
 				5CCCF10525BA5DE3007D0ECF /* Attribute.swift in Sources */,
 				5CCCF0FA25BA492B007D0ECF /* GameVC.swift in Sources */,
+				5CCCF11425BAAC68007D0ECF /* Collection+Ext.swift in Sources */,
 				5C63A7EA25B82A560054729C /* SceneDelegate.swift in Sources */,
 				5CCCF10C25BA6518007D0ECF /* Int+Ext.swift in Sources */,
 			);

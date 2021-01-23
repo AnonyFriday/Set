@@ -21,8 +21,10 @@ class GameVC : UIViewController
     // MARK: Interface Builder
     @IBOutlet private var customButtonCard: [UIButton]!
     @IBOutlet private weak var scoreLabel: UILabel!
+    @IBOutlet weak var drawThreeCardsLabel: UIButton!
     
-    @IBAction func touchUpDrawThreeCards(_ sender: Any) {
+    
+    @IBAction func touchUpDrawThreeCards(_ sender: UIButton) {
         gameSet?.drawThreeMoreCards()
         updateUIFromModel()
     }
@@ -45,6 +47,12 @@ class GameVC : UIViewController
     func updateUIFromModel() {
         scoreLabel.text = "Score: \(gameSet!.scorePoint)"
         configureCollectionButtons()
+        
+        if gameSet?.displayedCards.count == customButtonCard.count {
+            drawThreeCardsLabel.isEnabled = false
+        } else {
+            drawThreeCardsLabel.isEnabled = true
+        }
     }
         
     func configureCollectionButtons() {

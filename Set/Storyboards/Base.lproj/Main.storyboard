@@ -303,6 +303,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="drawThreeCardsLabel" destination="DdE-6U-IA0" id="uDu-ML-M0E"/>
                         <outlet property="scoreLabel" destination="ld7-r6-Thk" id="fEd-qS-6RQ"/>
                         <outletCollection property="customButtonCard" destination="vjk-9F-FnD" collectionClass="NSMutableArray" id="uTE-fj-of5"/>
                         <outletCollection property="customButtonCard" destination="nOr-4r-lb6" collectionClass="NSMutableArray" id="g8X-VN-yfu"/>

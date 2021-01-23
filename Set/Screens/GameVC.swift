@@ -20,10 +20,6 @@ class GameVC : UIViewController {
     @IBOutlet private var customButtonCard: [UIButton]!
     @IBOutlet private weak var scoreLabel: UILabel!
     
-
-    
-    
-    
     @IBAction func touchUpNewGame(_ sender: UIButton) {
         
     }
@@ -45,12 +41,18 @@ class GameVC : UIViewController {
     
     
     func configureCollectionButtons() {
-        for index in 0..<gameSet.displayedCards.count {
+        for button in customButtonCard {
+            button.setTitle("", for: .normal)
+            button.isEnabled = false
+            button.layer.backgroundColor = UIColor.clear.cgColor
+            button.layer.cornerRadius    = 10
+        }
+        
+        for index in gameSet.displayedCards.indices {
             let (button, card) = (customButtonCard[index], gameSet.displayedCards[index])
             if gameSet.displayedCards.contains(card) {
-                button.backgroundColor = gameSet.selectedCards.contains(card) ? .black : .white
-            } else {
-                button.isHidden = true
+                button.isEnabled = true
+                button.backgroundColor = gameSet.selectedCards.contains(card) ? .red : .white
             }
         }
     }

@@ -22,31 +22,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdP-Pm-Fyo">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="76.666666666666671"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="OWL-VF-cKn">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="76.666666666666671"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5f-ff-m5W">
-                                                        <rect key="frame" x="0.0" y="0.0" width="194" height="76.666666666666671"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <color key="textColor" systemColor="systemGreenColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld7-r6-Thk">
-                                                        <rect key="frame" x="196" y="0.0" width="194" height="76.666666666666671"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <color key="textColor" systemColor="systemGreenColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ld7-r6-Thk">
+                                                <rect key="frame" x="136.66666666666666" y="20.333333333333329" width="117" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="OWL-VF-cKn" secondAttribute="trailing" id="QNB-Xo-ki4"/>
-                                            <constraint firstItem="OWL-VF-cKn" firstAttribute="leading" secondItem="bdP-Pm-Fyo" secondAttribute="leading" id="Rk2-bb-pwC"/>
-                                            <constraint firstItem="OWL-VF-cKn" firstAttribute="top" secondItem="bdP-Pm-Fyo" secondAttribute="top" id="X3M-6g-k6u"/>
-                                            <constraint firstAttribute="bottom" secondItem="OWL-VF-cKn" secondAttribute="bottom" id="f4c-wN-ZJ0"/>
+                                            <constraint firstItem="ld7-r6-Thk" firstAttribute="centerY" secondItem="bdP-Pm-Fyo" secondAttribute="centerY" id="NYB-1S-bBB"/>
+                                            <constraint firstItem="ld7-r6-Thk" firstAttribute="centerX" secondItem="bdP-Pm-Fyo" secondAttribute="centerX" id="jjI-02-p8j"/>
+                                            <constraint firstItem="ld7-r6-Thk" firstAttribute="width" secondItem="bdP-Pm-Fyo" secondAttribute="width" multiplier="0.3" id="k03-ue-WEa"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cT9-US-YV7">
@@ -58,36 +45,32 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bpO-DA-FXL">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="89"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToI-5z-SRA" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjk-9F-FnD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="c80-jS-c4i"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="O9B-qQ-E0O"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-rT-dVj" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOr-4r-lb6">
                                                                 <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="tjR-cl-Nzt"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="6lI-25-FP8"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qon-oC-Byc" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6Y-CF-Dnp">
                                                                 <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="QMM-SF-wvl"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="qPX-99-8eR"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEs-Mg-hN9" customClass="KDButton" customModule="Set">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az6-nV-Mnf">
                                                                 <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="pT9-0R-210"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="ajO-ra-Lvc"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -95,36 +78,32 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="45D-cQ-cZa">
                                                         <rect key="frame" x="0.0" y="97" width="374" height="89"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEO-JU-PA2" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leo-FR-OH1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="PRm-d1-DXK"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="2H4-ee-C2m"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxx-8A-apV" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVI-ok-Ze5">
                                                                 <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="Vdp-bk-8A2"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="JVe-3c-X7Q"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2e-Mp-4i1" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvw-Qr-Bb1">
                                                                 <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="A6I-us-IRH"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="R7c-iL-A1K"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQZ-P8-7Ck" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mb-fZ-6Dy">
                                                                 <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="jX0-4U-oKm"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="8pr-Ty-Cch"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -132,36 +111,32 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aP4-z1-nQq">
                                                         <rect key="frame" x="0.0" y="194.00000000000003" width="374" height="89.333333333333343"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBv-6Y-GrZ" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9N-A3-et3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="89.333333333333329"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="OHP-v3-pRd"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="BVE-Xt-q9O"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJj-Od-PAe" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8w-pQ-Wb4">
                                                                 <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="89.333333333333329"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="cVb-8s-bhC"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="0bY-oo-uUC"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0r-Wp-0M2" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBd-mZ-gRY">
                                                                 <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="89.333333333333329"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="zWR-HI-iqi"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="g5P-ce-HN1"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kn-9i-dgI" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWj-LC-vvh">
                                                                 <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="89.333333333333329"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="ymp-eh-mRR"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="vTW-dD-I0E"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -169,36 +144,32 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7rU-YY-eO1">
                                                         <rect key="frame" x="0.0" y="291.33333333333337" width="374" height="89"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psc-nt-fEn" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhk-zv-yTg">
                                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="eQG-c5-Iaa"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="2tx-j2-cCj"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qep-ob-tQb" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDQ-Ow-gHc">
                                                                 <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="1O1-3G-Bnu"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="FUl-dC-FRI"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrZ-wG-owR" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4v-1I-hb9">
                                                                 <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="Lrg-DS-e1G"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="iuQ-mh-dh9"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3r-kx-Pjk" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1C-FF-tha">
                                                                 <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="UB6-Ry-ODJ"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="inh-lr-zzJ"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -206,36 +177,32 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xRf-tC-F1V">
                                                         <rect key="frame" x="0.0" y="388.33333333333337" width="374" height="89"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEU-Mf-E57" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esx-LX-hUX">
                                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="8kW-DG-dOz"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="kqL-gm-StI"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cg-Rq-rDL" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab1-Ny-OI7">
                                                                 <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="e9W-ZL-TuH"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="elX-4j-oJu"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQv-Lt-N19" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5I4-ds-tc4">
                                                                 <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="MyP-SJ-1Wl"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="1y8-Zk-5dv"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkI-ep-47R" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2At-RQ-436">
                                                                 <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="DjJ-Rd-ILl"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="UMo-9P-uvO"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -243,36 +210,32 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KVA-Jf-abU">
                                                         <rect key="frame" x="0.0" y="485.33333333333337" width="374" height="89"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUu-aD-V9O" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFE-gS-gfr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="X2O-Xn-Xtl"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="jBi-xK-LT4"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4s-4t-fJW" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh1-cA-4U4">
                                                                 <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="vDe-TO-4Ub"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="YPr-cG-z3H"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP2-NK-icL" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKQ-9K-91A">
                                                                 <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="nOJ-Eb-wmD"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="A9u-No-nyb"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xE0-4Z-nnE" customClass="KDButton" customModule="Set" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbs-Qi-2BR">
                                                                 <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="89"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="ri7-w9-qBc"/>
+                                                                    <action selector="touchUpButtonCard:" destination="q8t-lm-8OW" eventType="touchUpInside" id="Tms-hB-nJE"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -291,20 +254,32 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cos-4J-4Xu">
                                         <rect key="frame" x="0.0" y="667" width="390" height="99"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARH-Im-B9V">
-                                                <rect key="frame" x="117" y="29" width="156" height="41"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <state key="normal" title="New Game">
-                                                    <color key="titleColor" systemColor="systemGreenColor"/>
-                                                </state>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zf8-nO-zZ3">
+                                                <rect key="frame" x="58.666666666666657" y="29" width="273" height="41"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARH-Im-B9V">
+                                                        <rect key="frame" x="0.0" y="0.0" width="136.33333333333334" height="41"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <state key="normal" title="New Game">
+                                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="touchUpNewGame:" destination="q8t-lm-8OW" eventType="touchUpInside" id="USh-hZ-1vQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdE-6U-IA0">
+                                                        <rect key="frame" x="136.33333333333337" y="5.6666666666666288" width="136.66666666666663" height="30"/>
+                                                        <state key="normal" title="Draw 3 Cards"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="ARH-Im-B9V" firstAttribute="centerY" secondItem="Cos-4J-4Xu" secondAttribute="centerY" id="5s7-J2-tkp"/>
-                                            <constraint firstItem="ARH-Im-B9V" firstAttribute="width" secondItem="Cos-4J-4Xu" secondAttribute="width" multiplier="0.4" id="Stk-Be-Yzv"/>
-                                            <constraint firstItem="ARH-Im-B9V" firstAttribute="centerX" secondItem="Cos-4J-4Xu" secondAttribute="centerX" id="fQL-Z5-HyZ"/>
+                                            <constraint firstItem="Zf8-nO-zZ3" firstAttribute="centerX" secondItem="Cos-4J-4Xu" secondAttribute="centerX" id="D7P-xy-SCc"/>
+                                            <constraint firstItem="Zf8-nO-zZ3" firstAttribute="centerY" secondItem="Cos-4J-4Xu" secondAttribute="centerY" id="Uuo-Dt-h1V"/>
+                                            <constraint firstItem="Zf8-nO-zZ3" firstAttribute="width" secondItem="Cos-4J-4Xu" secondAttribute="width" multiplier="0.7" id="dUU-xL-zHs"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -324,30 +299,31 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outletCollection property="customButtonCard" destination="ToI-5z-SRA" collectionClass="NSMutableArray" id="72i-Sp-tD6"/>
-                        <outletCollection property="customButtonCard" destination="Obl-rT-dVj" collectionClass="NSMutableArray" id="0tf-K9-Esf"/>
-                        <outletCollection property="customButtonCard" destination="qon-oC-Byc" collectionClass="NSMutableArray" id="nlY-DK-bgO"/>
-                        <outletCollection property="customButtonCard" destination="dEs-Mg-hN9" collectionClass="NSMutableArray" id="PcZ-nV-nNU"/>
-                        <outletCollection property="customButtonCard" destination="CQZ-P8-7Ck" collectionClass="NSMutableArray" id="81t-9a-vYb"/>
-                        <outletCollection property="customButtonCard" destination="i2e-Mp-4i1" collectionClass="NSMutableArray" id="OfI-13-RKv"/>
-                        <outletCollection property="customButtonCard" destination="Gxx-8A-apV" collectionClass="NSMutableArray" id="1EB-fR-vzT"/>
-                        <outletCollection property="customButtonCard" destination="eEO-JU-PA2" collectionClass="NSMutableArray" id="5Fh-fM-AcG"/>
-                        <outletCollection property="customButtonCard" destination="2kn-9i-dgI" collectionClass="NSMutableArray" id="Qgd-NV-itX"/>
-                        <outletCollection property="customButtonCard" destination="i0r-Wp-0M2" collectionClass="NSMutableArray" id="6Ud-3A-DqQ"/>
-                        <outletCollection property="customButtonCard" destination="TJj-Od-PAe" collectionClass="NSMutableArray" id="B27-Fw-fis"/>
-                        <outletCollection property="customButtonCard" destination="tBv-6Y-GrZ" collectionClass="NSMutableArray" id="MDr-IB-BrJ"/>
-                        <outletCollection property="customButtonCard" destination="v3r-kx-Pjk" collectionClass="NSMutableArray" id="d7l-Re-QSC"/>
-                        <outletCollection property="customButtonCard" destination="lrZ-wG-owR" collectionClass="NSMutableArray" id="fW6-qg-gjv"/>
-                        <outletCollection property="customButtonCard" destination="qep-ob-tQb" collectionClass="NSMutableArray" id="MR8-Hd-Dxi"/>
-                        <outletCollection property="customButtonCard" destination="Psc-nt-fEn" collectionClass="NSMutableArray" id="YQM-XU-ifW"/>
-                        <outletCollection property="customButtonCard" destination="WkI-ep-47R" collectionClass="NSMutableArray" id="Hqd-Cp-cn0"/>
-                        <outletCollection property="customButtonCard" destination="QQv-Lt-N19" collectionClass="NSMutableArray" id="JQX-Wk-ApC"/>
-                        <outletCollection property="customButtonCard" destination="2cg-Rq-rDL" collectionClass="NSMutableArray" id="FAH-fU-RUX"/>
-                        <outletCollection property="customButtonCard" destination="bEU-Mf-E57" collectionClass="NSMutableArray" id="tgA-hk-1h4"/>
-                        <outletCollection property="customButtonCard" destination="xE0-4Z-nnE" collectionClass="NSMutableArray" id="F4i-uw-GCq"/>
-                        <outletCollection property="customButtonCard" destination="mP2-NK-icL" collectionClass="NSMutableArray" id="Ku1-76-j8G"/>
-                        <outletCollection property="customButtonCard" destination="A4s-4t-fJW" collectionClass="NSMutableArray" id="sgn-yO-si7"/>
-                        <outletCollection property="customButtonCard" destination="oUu-aD-V9O" collectionClass="NSMutableArray" id="YvT-xv-WkK"/>
+                        <outlet property="scoreLabel" destination="ld7-r6-Thk" id="fEd-qS-6RQ"/>
+                        <outletCollection property="customButtonCard" destination="vjk-9F-FnD" collectionClass="NSMutableArray" id="uTE-fj-of5"/>
+                        <outletCollection property="customButtonCard" destination="nOr-4r-lb6" collectionClass="NSMutableArray" id="g8X-VN-yfu"/>
+                        <outletCollection property="customButtonCard" destination="m6Y-CF-Dnp" collectionClass="NSMutableArray" id="02Y-ap-HM4"/>
+                        <outletCollection property="customButtonCard" destination="az6-nV-Mnf" collectionClass="NSMutableArray" id="TmU-KU-diH"/>
+                        <outletCollection property="customButtonCard" destination="1Mb-fZ-6Dy" collectionClass="NSMutableArray" id="oTH-R5-du1"/>
+                        <outletCollection property="customButtonCard" destination="jvw-Qr-Bb1" collectionClass="NSMutableArray" id="Kfs-Ga-db1"/>
+                        <outletCollection property="customButtonCard" destination="NVI-ok-Ze5" collectionClass="NSMutableArray" id="QcV-88-37c"/>
+                        <outletCollection property="customButtonCard" destination="leo-FR-OH1" collectionClass="NSMutableArray" id="RvC-mq-aKn"/>
+                        <outletCollection property="customButtonCard" destination="CWj-LC-vvh" collectionClass="NSMutableArray" id="GB3-9v-JIu"/>
+                        <outletCollection property="customButtonCard" destination="EBd-mZ-gRY" collectionClass="NSMutableArray" id="jaA-iW-bxL"/>
+                        <outletCollection property="customButtonCard" destination="w8w-pQ-Wb4" collectionClass="NSMutableArray" id="ArX-Lu-HYN"/>
+                        <outletCollection property="customButtonCard" destination="x9N-A3-et3" collectionClass="NSMutableArray" id="tTK-oj-yht"/>
+                        <outletCollection property="customButtonCard" destination="L1C-FF-tha" collectionClass="NSMutableArray" id="AVP-4l-7DR"/>
+                        <outletCollection property="customButtonCard" destination="K4v-1I-hb9" collectionClass="NSMutableArray" id="lvh-Ji-cfu"/>
+                        <outletCollection property="customButtonCard" destination="gDQ-Ow-gHc" collectionClass="NSMutableArray" id="8UC-VW-nHq"/>
+                        <outletCollection property="customButtonCard" destination="Yhk-zv-yTg" collectionClass="NSMutableArray" id="nUt-QH-sbV"/>
+                        <outletCollection property="customButtonCard" destination="2At-RQ-436" collectionClass="NSMutableArray" id="gXq-bO-uYC"/>
+                        <outletCollection property="customButtonCard" destination="5I4-ds-tc4" collectionClass="NSMutableArray" id="jOL-0C-RmD"/>
+                        <outletCollection property="customButtonCard" destination="ab1-Ny-OI7" collectionClass="NSMutableArray" id="Ciu-En-2Dy"/>
+                        <outletCollection property="customButtonCard" destination="esx-LX-hUX" collectionClass="NSMutableArray" id="4t4-in-aEm"/>
+                        <outletCollection property="customButtonCard" destination="SKQ-9K-91A" collectionClass="NSMutableArray" id="aUr-xx-Qsp"/>
+                        <outletCollection property="customButtonCard" destination="Bbs-Qi-2BR" collectionClass="NSMutableArray" id="EZ4-MT-tFd"/>
+                        <outletCollection property="customButtonCard" destination="hh1-cA-4U4" collectionClass="NSMutableArray" id="h6Y-FR-5nQ"/>
+                        <outletCollection property="customButtonCard" destination="QFE-gS-gfr" collectionClass="NSMutableArray" id="sj9-jv-glZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IL-m9-eRe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

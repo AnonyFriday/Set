@@ -44,6 +44,7 @@ class GameVC : UIViewController
     }
     
     
+    //MARK: Update UI From Model
     func updateUIFromModel() {
         scoreLabel.text = "Score: \(gameSet!.scorePoint)"
         configureCollectionButtons()
@@ -54,20 +55,26 @@ class GameVC : UIViewController
             drawThreeCardsLabel.isEnabled = true
         }
     }
-        
+    
+    
+    //MARK: Configure Collection Buttons
     func configureCollectionButtons() {
         for button in customButtonCard {
             button.setTitle("", for: .normal)
             button.isEnabled = false
             button.layer.backgroundColor = UIColor.clear.cgColor
             button.layer.cornerRadius    = 10
+            
         }
         
         for index in gameSet!.displayedCards.indices {
             let (button, card) = (customButtonCard[index], gameSet!.displayedCards[index])
             if gameSet!.displayedCards.contains(card) {
+                button.setButton(with: card)
                 button.isEnabled = true
-                button.backgroundColor = gameSet!.selectedCards.contains(card) ? .red : .white
+                button.backgroundColor = .white
+                button.layer.borderColor = gameSet!.selectedCards.contains(card) ? UIColor.systemRed.cgColor : UIColor.clear.cgColor
+                button.layer.borderWidth = 8
             }
         }
     }

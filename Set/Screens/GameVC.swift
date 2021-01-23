@@ -60,16 +60,16 @@ class GameVC : UIViewController
     //MARK: Configure Collection Buttons
     func configureCollectionButtons() {
         for button in customButtonCard {
-            button.setTitle("", for: .normal)
+            button.setAttributedTitle(NSAttributedString(string: ""), for: .normal)
             button.isEnabled = false
             button.layer.backgroundColor = UIColor.clear.cgColor
             button.layer.cornerRadius    = 10
-            
         }
         
         for index in gameSet!.displayedCards.indices {
             let (button, card) = (customButtonCard[index], gameSet!.displayedCards[index])
             if gameSet!.displayedCards.contains(card) {
+                
                 button.setButton(with: card)
                 button.isEnabled = true
                 button.backgroundColor = .white

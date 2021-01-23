@@ -23,7 +23,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="76.666666666666671"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ld7-r6-Thk">
-                                                <rect key="frame" x="136.66666666666666" y="20.333333333333329" width="117" height="36"/>
+                                                <rect key="frame" x="117" y="20.333333333333329" width="156" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="textColor" systemColor="systemGreenColor"/>
                                                 <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                                         <constraints>
                                             <constraint firstItem="ld7-r6-Thk" firstAttribute="centerY" secondItem="bdP-Pm-Fyo" secondAttribute="centerY" id="NYB-1S-bBB"/>
                                             <constraint firstItem="ld7-r6-Thk" firstAttribute="centerX" secondItem="bdP-Pm-Fyo" secondAttribute="centerX" id="jjI-02-p8j"/>
-                                            <constraint firstItem="ld7-r6-Thk" firstAttribute="width" secondItem="bdP-Pm-Fyo" secondAttribute="width" multiplier="0.3" id="k03-ue-WEa"/>
+                                            <constraint firstItem="ld7-r6-Thk" firstAttribute="width" secondItem="bdP-Pm-Fyo" secondAttribute="width" multiplier="0.4" id="k03-ue-WEa"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cT9-US-YV7">
@@ -254,11 +254,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cos-4J-4Xu">
                                         <rect key="frame" x="0.0" y="667" width="390" height="99"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zf8-nO-zZ3">
-                                                <rect key="frame" x="58.666666666666657" y="29" width="273" height="41"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zf8-nO-zZ3">
+                                                <rect key="frame" x="39" y="29" width="312" height="41"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARH-Im-B9V">
-                                                        <rect key="frame" x="0.0" y="0.0" width="136.33333333333334" height="41"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="41"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <state key="normal" title="New Game">
@@ -269,8 +269,12 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdE-6U-IA0">
-                                                        <rect key="frame" x="136.33333333333337" y="5.6666666666666288" width="136.66666666666663" height="30"/>
+                                                        <rect key="frame" x="160" y="0.0" width="152" height="41"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <state key="normal" title="Draw 3 Cards"/>
+                                                        <connections>
+                                                            <action selector="touchUpDrawThreeCards:" destination="q8t-lm-8OW" eventType="touchUpInside" id="QiU-VS-d0G"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -279,7 +283,7 @@
                                         <constraints>
                                             <constraint firstItem="Zf8-nO-zZ3" firstAttribute="centerX" secondItem="Cos-4J-4Xu" secondAttribute="centerX" id="D7P-xy-SCc"/>
                                             <constraint firstItem="Zf8-nO-zZ3" firstAttribute="centerY" secondItem="Cos-4J-4Xu" secondAttribute="centerY" id="Uuo-Dt-h1V"/>
-                                            <constraint firstItem="Zf8-nO-zZ3" firstAttribute="width" secondItem="Cos-4J-4Xu" secondAttribute="width" multiplier="0.7" id="dUU-xL-zHs"/>
+                                            <constraint firstItem="Zf8-nO-zZ3" firstAttribute="width" secondItem="Cos-4J-4Xu" secondAttribute="width" multiplier="0.8" id="dUU-xL-zHs"/>
                                         </constraints>
                                     </view>
                                 </subviews>

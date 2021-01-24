@@ -39,7 +39,7 @@ extension UIButton
         var strokeWidthValue : CGFloat = 0
         switch card.shading {
             case .one   : break                     /**Empty*/
-            case .two   : alphaValue = 0.15         /**Striped*/
+            case .two   : alphaValue = 0.25        /**Striped*/
             case .three : strokeWidthValue = 10.0   /**Filled*/
         }
         
@@ -52,9 +52,5 @@ extension UIButton
         let attributedTitle = NSMutableAttributedString(string: buttonTitle, attributes: attributes)
         
         self.setAttributedTitle(attributedTitle, for: .normal)
-        
-        
-    
-        
     }
 }

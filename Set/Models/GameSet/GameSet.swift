@@ -7,11 +7,14 @@
 
 import Foundation
 
+//MARK: Checkable
 protocol Checkable {
     var scorePoint : Int { get }
     func checkIfMakeSet(of cards: [Card]) -> Bool
 }
 
+
+//MARK: Class
 class GameSet: Checkable
 {
     
@@ -39,7 +42,7 @@ class GameSet: Checkable
         guard selectedCards.count != 3 else {
             if checkIfMakeSet(of: selectedCards)
             {
-                // WARNING: Testing may fail when the card is not in the selectedCards
+                // Map those matched cards into the new card extracted from the cards deck, if those cards are in selectedCards then map it to the new one else stay in the line
                 if !deckCards.totalCards.isEmpty {
                     displayedCards = displayedCards.compactMap{ selectedCards.contains($0) ? deckCards.drawRandomCard() : $0}
                 }
@@ -47,7 +50,7 @@ class GameSet: Checkable
                 scorePoint += 5
             }
             
-            else { scorePoint -= 3}
+            else { scorePoint -= 3 }
             selectedCards.removeAll()
             return
         }
@@ -87,13 +90,14 @@ class GameSet: Checkable
     }
 }
 
-
+//MARK: Extension
 extension Checkable
 {
     func checkIfMakeSet(of cards: [Card]) -> Bool{
         let (c1,c2,c3) = (cards[0], cards[1], cards[2])
         for selector in Card.allSelectors {
             let cardAttrs = [c1,c2,c3].map({selector($0)})
+            print(cardAttrs)
             if !cardAttrs.isAllSameOrAllDifference { return false }
         }
         return true

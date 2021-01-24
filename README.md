@@ -21,7 +21,7 @@ Rules has been settled out:
 * Point deduction will be made whenever you got the unmatched group, or re-select the selected card or hit the point when choosing the matched group
 
 
-Normal State | Draw More 3 cards | Full 24 cards on screen
+Normal State | Picking Cards | Full 24 cards on screen
 -------------- | ------------- | ------------- | 
 <img src="https://user-images.githubusercontent.com/56812770/105629223-d57fe980-5e95-11eb-8b86-644fe44e817f.png" width="300" height="650"> | <img src="https://user-images.githubusercontent.com/56812770/105629219-d284f900-5e95-11eb-827e-b5fa122a80d6.png" width="300" height="650"> | <img src="https://user-images.githubusercontent.com/56812770/105629355-a7e77000-5e96-11eb-811b-3913ff684d16.png" width="300" height="650">
 

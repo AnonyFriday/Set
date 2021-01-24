@@ -20,4 +20,18 @@ Rules has been settled out:
 * You have to choose 3 cards continuously, its attributes either are all the same or all different 
 * Point deduction will be made whenever you got the unmatched group, or re-select the selected card or hit the point when choosing the matched group
 
+
+Normal State | Draw More 3 cards | Full 24 cards on screen
+-------------- | ------------- | ------------- | 
+<img src="https://user-images.githubusercontent.com/56812770/105629223-d57fe980-5e95-11eb-8b86-644fe44e817f.png" width="300" height="650"> | <img src="https://user-images.githubusercontent.com/56812770/105629219-d284f900-5e95-11eb-827e-b5fa122a80d6.png" width="300" height="650"> | <img src="https://user-images.githubusercontent.com/56812770/105629225-d6b11680-5e95-11eb-89e3-87cefb997cd7.png" width="300" height="650">
+
+
+## Contributing 
+This project was developed further by the base project from the [Sean Allen Take Home Project Course](https://seanallen.teachable.com)
+Open an issue first to discuss what you would like to change and modify
+
+
+
 This project is licensed under the terms of the MIT license.
+
+

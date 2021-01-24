@@ -36,14 +36,14 @@ extension UIButton
         }
         
         var alphaValue : CGFloat = 1
-        var strokeWidthValue : CGFloat = 0
+        var strokeWidthValue : CGFloat = -2
         switch card.shading {
             case .one   : break                     /**Empty*/
-            case .two   : alphaValue = 0.25        /**Striped*/
+            case .two   : alphaValue = 0.25         /**Striped*/
             case .three : strokeWidthValue = 10.0   /**Filled*/
         }
         
-        var attributes : [NSAttributedString.Key : Any] = [
+        let attributes : [NSAttributedString.Key : Any] = [
             .font : UIFont.systemFont(ofSize: 30),
             .foregroundColor : colorValue.withAlphaComponent(alphaValue),
             .strokeWidth : strokeWidthValue

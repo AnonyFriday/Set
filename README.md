@@ -27,6 +27,6 @@ Normal State | Picking Cards | Full 24 cards on screen
 
 
 ## License
-This project is licensed under the terms of the [MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the terms of the [MIT License](https://choosealicense.com/licenses/mit/)
 
 

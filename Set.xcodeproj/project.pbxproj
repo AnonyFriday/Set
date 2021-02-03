@@ -24,6 +24,7 @@
 		5CD5F89E25CA84D8005F6CFA /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F89D25CA84D8005F6CFA /* CardButton.swift */; };
 		5CD5F8A825CA896E005F6CFA /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F8A725CA896E005F6CFA /* Grid.swift */; };
 		5CD5F8AC25CAB94F005F6CFA /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F8AB25CAB94F005F6CFA /* ShapeView.swift */; };
+		5CD5F8B225CAC326005F6CFA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F8B125CAC326005F6CFA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5CD5F89D25CA84D8005F6CFA /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 		5CD5F8A725CA896E005F6CFA /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		5CD5F8AB25CAB94F005F6CFA /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		5CD5F8B125CAC326005F6CFA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				5C63A7E625B82A560054729C /* Set */,
+				5C63A7FC25B82A720054729C /* Supporting Files */,
 				5C63A7E525B82A560054729C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,11 +81,10 @@
 		5C63A7E625B82A560054729C /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				5CCCF0F425BA48CF007D0ECF /* Models */,
-				5CCCF0F725BA48E9007D0ECF /* Storyboards */,
-				5CCCF10E25BA6525007D0ECF /* Extensions */,
-				5C63A7FC25B82A720054729C /* Supporting Files */,
 				5C63A7F525B82A570054729C /* Info.plist */,
+				5CCCF0F425BA48CF007D0ECF /* Models */,
+				5CCCF10E25BA6525007D0ECF /* Extensions */,
+				5CD5F8B525CAC331005F6CFA /* Ultilities */,
 				5CCCF0FC25BA4933007D0ECF /* Screens */,
 				5CD5F8A125CA84E7005F6CFA /* Custom Views */,
 			);
@@ -92,6 +94,7 @@
 		5C63A7FC25B82A720054729C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5CCCF0F725BA48E9007D0ECF /* Storyboards */,
 				5C63A7E725B82A560054729C /* AppDelegate.swift */,
 				5C63A7E925B82A560054729C /* SceneDelegate.swift */,
 				5C63A7F025B82A570054729C /* Assets.xcassets */,
@@ -180,6 +183,22 @@
 			path = "Card Buttons";
 			sourceTree = "<group>";
 		};
+		5CD5F8B525CAC331005F6CFA /* Ultilities */ = {
+			isa = PBXGroup;
+			children = (
+				5CD5F8B725CAC339005F6CFA /* Constants */,
+			);
+			path = Ultilities;
+			sourceTree = "<group>";
+		};
+		5CD5F8B725CAC339005F6CFA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5CD5F8B125CAC326005F6CFA /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,6 +274,7 @@
 				5CCCF0EF25BA48C2007D0ECF /* Card.swift in Sources */,
 				5C63A7FF25B82A890054729C /* GameSet.swift in Sources */,
 				5CCCF10525BA5DE3007D0ECF /* Attribute.swift in Sources */,
+				5CD5F8B225CAC326005F6CFA /* Constants.swift in Sources */,
 				5CD5F89E25CA84D8005F6CFA /* CardButton.swift in Sources */,
 				5CD5F8AC25CAB94F005F6CFA /* ShapeView.swift in Sources */,
 				5C67111525BBD36400F86269 /* UIButton+Ext.swift in Sources */,

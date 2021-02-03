@@ -13,7 +13,7 @@ class CardButton: UIButton
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .gray
     }
     
     required init?(coder: NSCoder) {
@@ -25,26 +25,35 @@ class CardButton: UIButton
         
         var shapes = [ShapeView]()
         for _ in 0..<numberOfShape!.rawValue {
-            let newShape = ShapeView(frame: bounds)
-            newShape.color = .one
-            newShape.shading = .two
+            let newShape = ShapeView(frame: frame)
+            newShape.color = .three
+            newShape.shading = .one
             newShape.symbolShape = .one
             newShape.isOpaque = false
             shapes.append(newShape)
         }
-
-        let stackView = UIStackView(arrangedSubviews: shapes)
-        stackView.alignment = .center
-        stackView.axis      = .vertical
-        stackView.distribution = .fillEqually
-        stackView.spacing   = bounds.height * 0.1
-        stackView.frame     = bounds
-        print(stackView)
-        addSubview(stackView)
+        
+        let stack = UIStackView(arrangedSubviews: shapes)
+                stack.translatesAutoresizingMaskIntoConstraints = false
+                
+                stack.axis = .vertical
+                stack.spacing = frame.height/16
+                stack.distribution = .fillEqually
+                addSubview(stack)
+                // constrains
+                stack.leftAnchor.constraint(equalTo: leftAnchor, constant: frame.width * Constants.marginRatio).isActive = true
+                stack.rightAnchor.constraint(equalTo: rightAnchor, constant: -frame.width * Constants.marginRatio).isActive = true
+                stack.heightAnchor.constraint(equalToConstant: frame.height * CGFloat(shapes.count) / 3 - frame.height * Constants.marginRatio).isActive = true
+                stack.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
 
         
     }
     
-    
-    
+}
+
+struct Constants {
+    static let marginRatio: CGFloat = 0.0625
+    static let strokeRatio: CGFloat = 0.01
+    static let cornerRadiusRatio: CGFloat = 0.25
 }

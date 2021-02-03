@@ -7,9 +7,13 @@
 
 import UIKit
 
+@IBDesignable
 class CardButton: UIButton
 {
     private var numberOfShape : Attribute? = .three { didSet {setNeedsDisplay()}}
+    private var color : Attribute? = .three { didSet {setNeedsDisplay()}}
+    private var shading : Attribute? = .three { didSet {setNeedsDisplay()}}
+    private var symbolShape : Attribute? = .three { didSet {setNeedsDisplay()}}
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,8 +30,8 @@ class CardButton: UIButton
         var shapes = [ShapeView]()
         for _ in 0..<numberOfShape!.rawValue {
             let newShape = ShapeView(frame: frame)
-            newShape.color = .three
-            newShape.shading = .one
+            newShape.color = .two
+            newShape.shading = .three
             newShape.symbolShape = .one
             newShape.isOpaque = false
             shapes.append(newShape)

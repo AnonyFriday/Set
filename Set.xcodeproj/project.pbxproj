@@ -78,12 +78,12 @@
 		5C63A7E625B82A560054729C /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				5CCCF0FC25BA4933007D0ECF /* Screens */,
 				5CCCF0F425BA48CF007D0ECF /* Models */,
 				5CCCF0F725BA48E9007D0ECF /* Storyboards */,
 				5CCCF10E25BA6525007D0ECF /* Extensions */,
 				5C63A7FC25B82A720054729C /* Supporting Files */,
 				5C63A7F525B82A570054729C /* Info.plist */,
+				5CCCF0FC25BA4933007D0ECF /* Screens */,
 				5CD5F8A125CA84E7005F6CFA /* Custom Views */,
 			);
 			path = Set;
@@ -165,11 +165,19 @@
 			isa = PBXGroup;
 			children = (
 				5CD5F89A25CA849D005F6CFA /* CardDeckContainerView.swift */,
-				5CD5F89D25CA84D8005F6CFA /* CardButton.swift */,
+				5CD5F8AE25CABD2D005F6CFA /* Card Buttons */,
 				5CD5F8A725CA896E005F6CFA /* Grid.swift */,
-				5CD5F8AB25CAB94F005F6CFA /* ShapeView.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		5CD5F8AE25CABD2D005F6CFA /* Card Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				5CD5F89D25CA84D8005F6CFA /* CardButton.swift */,
+				5CD5F8AB25CAB94F005F6CFA /* ShapeView.swift */,
+			);
+			path = "Card Buttons";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

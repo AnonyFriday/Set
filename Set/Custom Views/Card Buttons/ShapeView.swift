@@ -14,19 +14,29 @@ class ShapeView: UIView {
     var shading         : Attribute! { didSet {setNeedsDisplay()}}
     
     override func draw(_ rect: CGRect) {
-        let path = UIBezierPath()
-        // Draw Pattern
+        let path: UIBezierPath
         
-        path.move(to: CGPoint(x: 0, y: bounds.midY))
-        path.addLine(to: CGPoint(x: bounds.midX, y: 0))
-        path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.midY))
-        path.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
-        path.close()
-
-        UIColor.blue.setFill()
-        UIColor.white.setStroke()
-        path.stroke()
-        path.fill()
+        // Draw Pattern
+        switch symbolShape {
+        case .one: /**Diamond*/
+            path = UIBezierPath()
+            path.move(to: CGPoint(x: 0, y: bounds.midY))
+            path.addLine(to: CGPoint(x: bounds.midX, y: 0))
+            path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.midY))
+            path.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
+            path.close()
+        case .two: /**Oval*/
+            path = .init(ovalIn: bounds)
+        case .three: /**Triangle*/
+            path = UIBezierPath()
+            path.move(to: CGPoint(x: 0, y: bounds.midY))
+            path.addLine(to: CGPoint(x: bounds.width / 2, y: 0))
+            path.addLine(to: CGPoint(x: bounds.width, y: bounds.height/2))
+            path.close()
+        case .none:
+            path = UIBezierPath()
+        }
+    
         
         // Shadding
         switch shading {
@@ -62,7 +72,6 @@ class ShapeView: UIView {
         case .three:
             UIColor.systemGreen.setFill()
             UIColor.systemGreen.setStroke()
-
         case .none:
             break
         }

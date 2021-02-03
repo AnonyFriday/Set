@@ -11,18 +11,20 @@ class GameVC : UIViewController
 {
     
     lazy var gameSet = GameSet(numberOfCardToStart: 12)
+    var myDeck = CardDeckContainerView()
+    
     
     override func viewDidLoad() {
 //        updateUIFromModel()
-        
+        self.view.addSubview(myDeck)
     }
     
 
     // MARK: Interface Builder
 //    @IBOutlet private var customButtonCard: [UIButton]!
-//    @IBOutlet private weak var scoreLabel: UILabel!
-//    @IBOutlet weak var drawThreeCardsLabel: UIButton!
-//
+    @IBOutlet private weak var scoreLabel: UILabel!
+    @IBOutlet weak var drawThreeCardsLabel: UIButton!
+
 //
 //    @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
 //    {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Attribute: String, CaseIterable
+enum Attribute: Int, CaseIterable
 {
     case one
     case two

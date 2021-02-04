@@ -11,7 +11,6 @@ class GameVC : UIViewController
 {
     // MARK: Start to play the game - Model
     lazy private var gameSet = GameSet()
-    lazy private var gameDeckContainer = CardDeckContainerView()
     
     // MARK: Interface Builder - View
     @IBOutlet private weak var cardDeckContainerView : CardDeckContainerView!
@@ -51,10 +50,26 @@ class GameVC : UIViewController
     //MARK: Update UI From Model
     func updateUIFromModel()
     {
+        
         scoreLabel.text = "Score: \(gameSet!.scorePoint)"
-        cardDeckContainerView.addCardButtonToGrid(byAmount: 12)
+        cardDeckContainerView.addCardButtonToGrid(byAmount: 2)
+        
+        //MARK: Synchronize the View and Model
+        
+//        var index = 0
+//        var currentCards = gameSet!.displayedCards
+//        var currentButtonCards = cardDeckContainerView.cardButtons
+//        
+//        while index < currentCards.count && index < currentButtonCards.count {
+//            currentButtonCards[index].color          =  currentCards[index].color
+//            currentButtonCards[index].numberOfShape  =  currentCards[index].quantity
+//            currentButtonCards[index].symbolShape    =  currentCards[index].shape
+//            currentButtonCards[index].shading        =  currentCards[index].shading
+//            index += 1
+//        }
+        
     }
-//
+    //
 //
 //    //MARK: Configure Collection Buttons
 //    func configureCollectionButtons()

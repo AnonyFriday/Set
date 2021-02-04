@@ -14,7 +14,6 @@ class CardDeckContainerView: UIView {
     private(set) var grid        : Grid = Grid(layout: .aspectRatio(4/5))
     
     
-    
     //MARK: View Life Cycle
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -42,7 +41,7 @@ class CardDeckContainerView: UIView {
         
         // Map those button with its initializer
         let amountButtons = (0..<amount).map { _ in CardButton() }
-        
+        print(amountButtons[1])
         for button in amountButtons {
             addSubview(button)
         }

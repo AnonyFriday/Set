@@ -10,39 +10,13 @@ import UIKit
 @IBDesignable
 class CardButton: UIButton
 {
-    //MARK: Initializer
-    private var numberOfShape : Attribute?  = .three { didSet {setNeedsDisplay()}}
-    private var color : Attribute?          = .three { didSet {setNeedsDisplay()}}
-    private var shading : Attribute?        = .three { didSet {setNeedsDisplay()}}
-    private var symbolShape : Attribute?    = .three { didSet {setNeedsDisplay()}}
-    private var stackViewOfShapeViews : UIStackView!
+    //MARK: Properties
+    var numberOfShape : Attribute!  = .one { didSet {setNeedsDisplay()}}
+    var color : Attribute!          = .one { didSet {setNeedsDisplay()}}
+    var shading : Attribute!        = .one { didSet {setNeedsDisplay()}}
+    var symbolShape : Attribute!    = .one { didSet {setNeedsDisplay()}}
     
-    
-    //MARK: Init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureShapeViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    //MARK: Layout Subviews
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        stackViewOfShapeViews.frame = bounds.insetBy(dx: stackViewInsetByDx, dy: stackViewInsetByDy)
-    }
-    
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        setNeedsLayout()
-    }
-    
-
-    //MARK: Configure ShapeViews
-    fileprivate func configureShapeViews() {
+    var shapes : [ShapeView]! {
         var shapes = [ShapeView]()
         for _ in 0..<numberOfShape!.rawValue {
             let newShape            = ShapeView()
@@ -50,13 +24,32 @@ class CardButton: UIButton
             newShape.shading        = shading
             newShape.symbolShape    = symbolShape
             newShape.isOpaque       = false
-//            newShape.contentMode    = .scaleAspectFit
             shapes.append(newShape)
         }
-        
-        stackViewOfShapeViews = UIStackView(arrangedSubviews: shapes)
+        return shapes
+    }
+
+    private lazy var stackViewOfShapeViews = UIStackView(arrangedSubviews: shapes)
+
+    
+    //MARK: Layout Subviews
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configureShapeViews()
+    }
+    
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        setNeedsLayout()
+        setNeedsDisplay()
+    }
+    
+    
+    //MARK: Configure ShapeViews
+    fileprivate func configureShapeViews() {
+        stackViewOfShapeViews.removeFromSuperview()
+        stackViewOfShapeViews.frame = bounds.insetBy(dx: stackViewInsetByDx, dy: stackViewInsetByDy)
         stackViewOfShapeViews.axis = .vertical
-        
         stackViewOfShapeViews.distribution = .fillEqually
         stackViewOfShapeViews.contentMode  = .scaleAspectFit //TODO: Change the scale ratio of the stack view
         addSubview(stackViewOfShapeViews)

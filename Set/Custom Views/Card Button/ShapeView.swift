@@ -13,6 +13,16 @@ class ShapeView: UIView {
     var symbolShape     : Attribute! { didSet {setNeedsDisplay()}}
     var shading         : Attribute! { didSet {setNeedsDisplay()}}
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .black
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func draw(_ rect: CGRect) {
         let path: UIBezierPath
         
@@ -29,9 +39,9 @@ class ShapeView: UIView {
             path = .init(ovalIn: bounds)
         case .three:    /**Triangle*/
             path = UIBezierPath()
-            path.move(to: CGPoint(x: 0, y: bounds.height * 2/3))
-            path.addLine(to: CGPoint(x: bounds.width / 2, y: 0))
-            path.addLine(to: CGPoint(x: bounds.width, y: bounds.height * 2/3))
+            path.move(to: CGPoint(x: 0, y: bounds.height * 4/5))
+            path.addLine(to: CGPoint(x: bounds.width / 2, y: bounds.height * 1/5))
+            path.addLine(to: CGPoint(x: bounds.width, y: bounds.height * 4/5))
             path.close()
         case .none:
             path = UIBezierPath()

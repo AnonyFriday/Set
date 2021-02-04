@@ -7,10 +7,9 @@
 
 import UIKit
 
-@IBDesignable
 class CardDeckContainerView: UIView {
     
-    private(set) var cardButtons = [CardButton]()
+    var cardButtons = [CardButton]()
     private(set) var grid        : Grid = Grid(layout: .aspectRatio(4/5))
     
     

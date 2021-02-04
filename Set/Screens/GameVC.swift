@@ -43,32 +43,48 @@ class GameVC : UIViewController
 //              let card = gameSet?.displayedCards[index]
 //        else { return }
 //        gameSet!.select(card: card) // we got the selectedCard
-//        updateUIFromModel()
-//    }
-//
-//
+    //        updateUIFromModel()
+    //    }
+    //
+    //
     //MARK: Update UI From Model
+    
+    
+    
+    //MARK: Synchronize the View and Model
+   
+    
     func updateUIFromModel()
     {
         
         scoreLabel.text = "Score: \(gameSet!.scorePoint)"
         cardDeckContainerView.addCardButtonToGrid(byAmount: 2)
         
-        //MARK: Synchronize the View and Model
-        
-//        var index = 0
-//        var currentCards = gameSet!.displayedCards
-//        var currentButtonCards = cardDeckContainerView.cardButtons
-//        
-//        while index < currentCards.count && index < currentButtonCards.count {
-//            currentButtonCards[index].color          =  currentCards[index].color
-//            currentButtonCards[index].numberOfShape  =  currentCards[index].quantity
-//            currentButtonCards[index].symbolShape    =  currentCards[index].shape
-//            currentButtonCards[index].shading        =  currentCards[index].shading
-//            index += 1
-//        }
-        
+        synchrounizeButtonCards(fromCards: gameSet!.displayedCards, applyToButtonCards: &cardDeckContainerView.cardButtons)
+   
     }
+    
+    
+    fileprivate func synchrounizeButtonCards(fromCards cards: [Card], applyToButtonCards buttonCards: inout [CardButton]){
+
+        var index = 0
+        
+        while index < cards.count && index < buttonCards.count {
+            buttonCards[index].color          =  cards[index].color
+            buttonCards[index].numberOfShape  =  cards[index].quantity
+            buttonCards[index].symbolShape    =  cards[index].shape
+            buttonCards[index].shading        =  cards[index].shading
+            index += 1
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     //
 //
 //    //MARK: Configure Collection Buttons

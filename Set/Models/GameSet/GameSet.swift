@@ -97,7 +97,6 @@ extension Checkable
         let (c1,c2,c3) = (cards[0], cards[1], cards[2])
         for selector in Card.allSelectors {
             let cardAttrs = [c1,c2,c3].map({selector($0)})
-            print(cardAttrs)
             if !cardAttrs.isAllSameOrAllDifference { return false }
         }
         return true

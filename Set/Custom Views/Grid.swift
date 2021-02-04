@@ -5,7 +5,7 @@
 //  Copyright © 2017 Stanford University. All rights reserved.
 //
 //  Arranges the space in a rectangle into a grid of cells.
-//  All cells will be exactly the same size.
+//  All  e.
 //  If the grid does not fill the provided frame edge-to-edge
 //    then it will center the grid of cells in the provided frame.
 //  If you want spacing between cells in the grid, simply inset each cell's frame.

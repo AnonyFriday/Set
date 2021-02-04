@@ -18,7 +18,10 @@ class CardButton: UIButton
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .gray
+    }
+    
+    convenience init() {
+        self.init(frame: .zero)
         configureShapeViews()
     }
     
@@ -57,7 +60,7 @@ class CardButton: UIButton
         stackViewOfShapeViews.axis = .vertical
         
         stackViewOfShapeViews.distribution = .fillEqually
-        stackViewOfShapeViews.contentMode  = .scaleAspectFit
+        stackViewOfShapeViews.contentMode  = .scaleAspectFit //TODO: Change the scale ratio of the stack view
         addSubview(stackViewOfShapeViews)
     }
     

@@ -15,7 +15,6 @@ class ShapeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .black
     }
     
     required init?(coder: NSCoder) {

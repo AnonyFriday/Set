@@ -92,6 +92,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cardDeckContainerView" destination="cT9-US-YV7" id="c08-Ji-6mC"/>
                         <outlet property="drawThreeCardsLabel" destination="DdE-6U-IA0" id="uDu-ML-M0E"/>
                         <outlet property="scoreLabel" destination="ld7-r6-Thk" id="fEd-qS-6RQ"/>
                     </connections>

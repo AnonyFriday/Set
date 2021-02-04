@@ -11,12 +11,15 @@ class GameVC : UIViewController
 {
     
     lazy var gameSet = GameSet(numberOfCardToStart: 12)
-    var myDeck = CardDeckContainerView()
+    lazy var myDeck = CardDeckContainerView()
+    
+    @IBOutlet private weak var cardDeckContainerView: CardDeckContainerView!
     
     
     override func viewDidLoad() {
-//        updateUIFromModel()
-        self.view.addSubview(myDeck)
+        gameSet?.setDisplayCard(with: 12)
+        cardDeckContainerView.addCardButtonToGrid(byAmount: 12)
+        //        updateUIFromModel()
     }
     
 

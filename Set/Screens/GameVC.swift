@@ -9,23 +9,22 @@ import UIKit
 
 class GameVC : UIViewController
 {
+    // MARK: Start to play the game - Model
+    lazy private var gameSet = GameSet()
+    lazy private var gameDeckContainer = CardDeckContainerView()
     
-    lazy var gameSet = GameSet(numberOfCardToStart: 12)
-    
-    @IBOutlet private weak var cardDeckContainerView: CardDeckContainerView!
+    // MARK: Interface Builder - View
+    @IBOutlet private weak var cardDeckContainerView : CardDeckContainerView!
+    @IBOutlet private weak var scoreLabel: UILabel!
+    @IBOutlet weak var drawThreeCardsLabel: UIButton!
     
     
     override func viewDidLoad() {
-        gameSet?.setDisplayCard(with: 12)
-        cardDeckContainerView.addCardButtonToGrid(byAmount: 12)
-        //        updateUIFromModel()
+        updateUIFromModel()
     }
     
 
-    // MARK: Interface Builder
-//    @IBOutlet private var customButtonCard: [UIButton]!
-    @IBOutlet private weak var scoreLabel: UILabel!
-    @IBOutlet weak var drawThreeCardsLabel: UIButton!
+
 
 //
 //    @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
@@ -49,13 +48,12 @@ class GameVC : UIViewController
 //    }
 //
 //
-//    //MARK: Update UI From Model
-//    func updateUIFromModel()
-//    {
-//        scoreLabel.text = "Score: \(gameSet!.scorePoint)"
-//        configureCollectionButtons()
-//        gameSet?.displayedCards.count == customButtonCard.count ? (drawThreeCardsLabel.isEnabled = false) : (drawThreeCardsLabel.isEnabled = true)
-//    }
+    //MARK: Update UI From Model
+    func updateUIFromModel()
+    {
+        scoreLabel.text = "Score: \(gameSet!.scorePoint)"
+        cardDeckContainerView.addCardButtonToGrid(byAmount: 12)
+    }
 //
 //
 //    //MARK: Configure Collection Buttons

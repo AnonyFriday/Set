@@ -14,8 +14,8 @@
             filePath = "Set/Screens/GameVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "GameVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "Set/Screens/GameVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "GameVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "Set/Screens/GameVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "GameVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Set/Custom Views/Card Container View/CardDeckContainerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "addCardButtonToGrid(byAmount:)"
             landmarkType = "7">
             <Locations>
@@ -126,10 +126,226 @@
             filePath = "Set/Custom Views/Card Container View/CardDeckContainerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "addCardButtonToGrid(byAmount:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A32E37E-C709-45D0-BD08-DD596AD48EB2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Set/Screens/GameVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "GameVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "5A32E37E-C709-45D0-BD08-DD596AD48EB2 - b551eaf243224240"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.(gameSet in _5CF57AE8E79217E193F2904E534706A9).getter : Swift.Optional&lt;Set.GameSet&gt;"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  uuid = "5A32E37E-C709-45D0-BD08-DD596AD48EB2 - 76b86a8c6b3cee7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.(gameSet in _5CF57AE8E79217E193F2904E534706A9).setter : Swift.Optional&lt;Set.GameSet&gt;"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "5A32E37E-C709-45D0-BD08-DD596AD48EB2 - d2573ec878e0e9e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.(gameSet in _5CF57AE8E79217E193F2904E534706A9).modify : Swift.Optional&lt;Set.GameSet&gt;"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "5A32E37E-C709-45D0-BD08-DD596AD48EB2 - d50194ae7a34226"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.(gameSet in _5CF57AE8E79217E193F2904E534706A9).modify : Swift.Optional&lt;Set.GameSet&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "5A32E37E-C709-45D0-BD08-DD596AD48EB2 - e8f99e745e199c69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Set.GameVC"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  uuid = "5A32E37E-C709-45D0-BD08-DD596AD48EB2 - 2db40d806afbdad2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Set.GameVC&gt;"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "221">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19A4A0D9-6AC2-4D76-B65E-DA69C55ECFC2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Set/Screens/GameVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "GameVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "19A4A0D9-6AC2-4D76-B65E-DA69C55ECFC2 - ea16e54b05c6c249"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.(gameDeckContainer in _5CF57AE8E79217E193F2904E534706A9).getter : Set.CardDeckContainerView"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "226">
+               </Location>
+               <Location
+                  uuid = "19A4A0D9-6AC2-4D76-B65E-DA69C55ECFC2 - ea16e54b05c6c249"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.(gameDeckContainer in _5CF57AE8E79217E193F2904E534706A9).setter : Set.CardDeckContainerView"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "19A4A0D9-6AC2-4D76-B65E-DA69C55ECFC2 - 7ce6ff0a3974aeea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.(gameDeckContainer in _5CF57AE8E79217E193F2904E534706A9).modify : Set.CardDeckContainerView"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "19A4A0D9-6AC2-4D76-B65E-DA69C55ECFC2 - 3c44b378f144dbdb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.(gameDeckContainer in _5CF57AE8E79217E193F2904E534706A9).modify : Set.CardDeckContainerView with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "19A4A0D9-6AC2-4D76-B65E-DA69C55ECFC2 - e8f99e745e199c0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Set.GameVC"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "374">
+               </Location>
+               <Location
+                  uuid = "19A4A0D9-6AC2-4D76-B65E-DA69C55ECFC2 - 2db40d806afbdab1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.GameVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Set.GameVC&gt;"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyvukim/Desktop/Stanford%20University/Projects/Set/Set/Screens/GameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "315">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

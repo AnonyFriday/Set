@@ -26,12 +26,9 @@ class GameSet: Checkable
     
     
     //MARK: Initializer
-    init?(numberOfCardToStart: Int)
+    required init?()
     {
-        guard numberOfCardToStart % 3 == 0 else {
-            return nil
-        }
-        setDisplayCard(with: numberOfCardToStart)
+        setDisplayCard(with: 12)
     }
     
     

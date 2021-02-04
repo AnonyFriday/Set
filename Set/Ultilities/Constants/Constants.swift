@@ -6,9 +6,9 @@
 //
 
 import Foundation
-//
-//enum Constants {
-//    enum CardButton {
-//        static let stackViewMarginRatioToButtonBound = 0.35
-//    }
-//}
+
+enum Constants {
+    enum CardButton {
+        static let stackViewMarginRatioToButtonBound = 0.35
+    }
+}

@@ -15,11 +15,9 @@ class CardDeckContainerView: UIView {
         super.layoutSubviews()
         backgroundColor = .brown
         
+        print(cardButton.bounds)
         cardButton.frame = self.bounds
-        
         addSubview(cardButton)
-        
-    
         
     }
     

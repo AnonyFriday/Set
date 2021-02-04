@@ -16,7 +16,6 @@ class ShapeView: UIView {
     override func draw(_ rect: CGRect) {
         let path: UIBezierPath
         
-        
         // Draw Pattern
         switch symbolShape {
         case .one:      /**Diamond*/
@@ -30,9 +29,9 @@ class ShapeView: UIView {
             path = .init(ovalIn: bounds)
         case .three:    /**Triangle*/
             path = UIBezierPath()
-            path.move(to: CGPoint(x: 0, y: bounds.midY))
+            path.move(to: CGPoint(x: 0, y: bounds.height * 2/3))
             path.addLine(to: CGPoint(x: bounds.width / 2, y: 0))
-            path.addLine(to: CGPoint(x: bounds.width, y: bounds.height/2))
+            path.addLine(to: CGPoint(x: bounds.width, y: bounds.height * 2/3))
             path.close()
         case .none:
             path = UIBezierPath()
@@ -61,18 +60,22 @@ class ShapeView: UIView {
         case .two:  /**Fill*/
             path.fill()
         case .three: /**Striped*/
+            path.lineWidth = 0.01 * bounds.size.height
+            path.addClip()
+            
             let stripe = UIBezierPath()
             var currentX : CGFloat = 0
 
             while currentX < bounds.width {
                 stripe.move(to: CGPoint(x: currentX, y: 0))
                 stripe.addLine(to: CGPoint(x: currentX, y: bounds.size.height))
-                currentX *= ( 0.03 * bounds.size.width )
+                currentX += ( 0.03 * bounds.size.width )
             }
-            stripe.lineWidth = 0.005 * frame.size.width
+            stripe.lineWidth = 0.005 * bounds.size.width
             
             stripe.stroke()
             path.stroke()
+            
             
         case .none: break
         }

@@ -11,7 +11,6 @@ class GameVC : UIViewController
 {
     
     lazy var gameSet = GameSet(numberOfCardToStart: 12)
-    lazy var myDeck = CardDeckContainerView()
     
     @IBOutlet private weak var cardDeckContainerView: CardDeckContainerView!
     

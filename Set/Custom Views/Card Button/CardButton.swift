@@ -10,33 +10,31 @@ import UIKit
 @IBDesignable
 class CardButton: UIButton
 {
-    private var numberOfShape : Attribute? = .three { didSet {setNeedsDisplay()}}
-    private var color : Attribute? = .three { didSet {setNeedsDisplay()}}
-    private var shading : Attribute? = .three { didSet {setNeedsDisplay()}}
-    private var symbolShape : Attribute? = .three { didSet {setNeedsDisplay()}}
+    //MARK: Initializer
+    private var numberOfShape : Attribute?  = .three { didSet {setNeedsDisplay()}}
+    private var color : Attribute?          = .three { didSet {setNeedsDisplay()}}
+    private var shading : Attribute?        = .three { didSet {setNeedsDisplay()}}
+    private var symbolShape : Attribute?    = .three { didSet {setNeedsDisplay()}}
     private var stackViewOfShapeViews : UIStackView!
     
+    
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-    }
-    
-    convenience init() {
-        self.init(frame: .zero)
         configureShapeViews()
     }
     
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
+    //MARK: Layout Subviews
     override func layoutSubviews() {
         super.layoutSubviews()
-
-        stackViewOfShapeViews.frame = bounds
-        stackViewOfShapeViews.spacing = bounds.height / 16
+        stackViewOfShapeViews.frame = bounds.insetBy(dx: stackViewInsetByDx, dy: stackViewInsetByDy)
     }
+    
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         setNeedsLayout()
@@ -66,8 +64,20 @@ class CardButton: UIButton
     
 }
 
-struct Constants {
-    static let marginRatio: CGFloat = 0.0625
-    static let strokeRatio: CGFloat = 0.01
-    static let cornerRadiusRatio: CGFloat = 0.25
+//MARK: Extension
+extension CardButton {
+    enum ScreenRatio {
+        static let stackViewInsetByDxRatio: CGFloat = 0.1
+        static let stackViewInsetByDyRatio: CGFloat = 0.1
+    }
+    
+    var stackViewInsetByDx: CGFloat {
+        bounds.width * ScreenRatio.stackViewInsetByDxRatio
+    }
+    
+    var stackViewInsetByDy: CGFloat {
+        bounds.height * ScreenRatio.stackViewInsetByDxRatio
+    }
 }
+
+

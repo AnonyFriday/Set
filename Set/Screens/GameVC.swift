@@ -74,6 +74,10 @@ class GameVC : UIViewController
             cardViews[index].addGestureRecognizer(tap)
             index += 1
         }
+        
+        if gameSet.deckCards.totalCards.isEmpty {
+            drawThreeCardsLabel.isEnabled = false
+        }
     }
     
     

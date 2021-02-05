@@ -7,6 +7,12 @@
 
 import UIKit
 
+//
+//@objc protocol GameVCDelegate: class {
+//    @objc func gameVC(gameVC: GameVC, didTapButtonCard: CardButton)
+////    gameVC(gameVC: GameVC, did
+//}
+
 class GameVC : UIViewController
 {
     // MARK: Start to play the game - Model
@@ -17,14 +23,15 @@ class GameVC : UIViewController
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet weak var drawThreeCardsLabel: UIButton!
     
-    
     override func viewDidLoad() {
         updateUIFromModel()
     }
     
-
-
-
+    @objc func touchUpButtonCard() {
+        print("Hello")
+    }
+    
+    
 //
 //    @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
 //    {
@@ -65,26 +72,28 @@ class GameVC : UIViewController
     }
     
     
-    fileprivate func synchrounizeButtonCards(fromCards cards: [Card], applyToButtonCards buttonCards: inout [CardButton]){
-
+    fileprivate func synchrounizeButtonCards(fromCards cards: [Card], applyToButtonCards buttonCards: inout [CardButton])
+    {
         var index = 0
-        
         while index < cards.count && index < buttonCards.count {
             buttonCards[index].color          =  cards[index].color
             buttonCards[index].numberOfShape  =  cards[index].quantity
             buttonCards[index].symbolShape    =  cards[index].shape
             buttonCards[index].shading        =  cards[index].shading
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(gameVC(gameVC:didTapButtonCard:)))
+            buttonCards[index].addGestureRecognizer(tap)
             index += 1
         }
     }
     
+    @objc func gameVC(gameVC: GameVC, didTapButtonCard: CardButton) {
+        print("Hello")
+    }
     
     
     
-    
-    
-    
-    
+
     //
 //
 //    //MARK: Configure Collection Buttons
@@ -112,3 +121,13 @@ class GameVC : UIViewController
 //        }
 //    }
 }
+
+//extension GameVC: GameVCDelegate {
+//    func gameVC(gameVC: GameVC, didTapButtonCard: CardButton) {
+//        print("Hello")
+//    }
+//    
+//    
+//    
+//    
+//}

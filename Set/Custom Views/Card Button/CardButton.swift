@@ -8,14 +8,14 @@
 import UIKit
 
 @IBDesignable
-class CardButton: UIButton
+class CardButton: UIView
 {
     //MARK: Properties
     var numberOfShape : Attribute!  = .one { didSet {setNeedsDisplay()}}
     var color : Attribute!          = .one { didSet {setNeedsDisplay()}}
     var shading : Attribute!        = .one { didSet {setNeedsDisplay()}}
     var symbolShape : Attribute!    = .one { didSet {setNeedsDisplay()}}
-    
+        
     var shapes : [ShapeView]! {
         var shapes = [ShapeView]()
         for _ in 0..<numberOfShape!.rawValue {
@@ -55,6 +55,9 @@ class CardButton: UIButton
         addSubview(stackViewOfShapeViews)
     }
     
+    
+    
+
 }
 
 //MARK: Extension

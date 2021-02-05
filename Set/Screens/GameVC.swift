@@ -19,17 +19,18 @@ class GameVC : UIViewController
     @IBOutlet weak var drawThreeCardsLabel: UIButton!
     
     override func viewDidLoad() {
-        cardDeckContainerView.addCardViewToGrid(byAmount: 42)
-        synchrounizeButtonCards(fromCards: gameSet.displayedCards, applyToCardViews: &cardDeckContainerView.cardViews)
+        cardDeckContainerView.addCardViewToGrid(byAmount: 12)
+        synchrounizeButtonCards()
     }
     
 
-    //
-    //    @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
-    //    {
-    //        gameSet?.drawThreeMoreCards()
-    //        updateUIFromModel()
-    //    }
+    
+        @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
+        {
+            gameSet.drawThreeMoreCards()
+            cardDeckContainerView.addCardViewToGrid(byAmount: 3)
+            synchrounizeButtonCards()
+        }
     //
     //    @IBAction func touchUpNewGame(_ sender: UIButton) {
     //        gameSet?.makeNewGame()
@@ -50,21 +51,14 @@ class GameVC : UIViewController
     
     
     //MARK: Update UI From Model
-    func updateUIFromModel()
-    {
-        scoreLabel.text = "Score: \(gameSet.scorePoint)"
-    
-        for index in gameSet.displayedCards.indices {
-            print("\n\n",gameSet.displayedCards,"\n\n")
-            var (card, cardView) = (gameSet.displayedCards[index], cardDeckContainerView.cardViews[index])
-            
-            setCardView(cardView: &cardView, by: card)
-        }
-    }
     
     //MARK: Synchronize the View and Model
-    fileprivate func synchrounizeButtonCards(fromCards cards: [Card?], applyToCardViews cardViews: inout [CardView])
+    fileprivate func synchrounizeButtonCards()
     {
+        scoreLabel.text = "Score: \(gameSet.scorePoint)"
+        
+        let cards = gameSet.displayedCards
+        let cardViews = cardDeckContainerView.cardViews
         assert(cards.count == cardViews.count, "Both number of elements of each array has to be equal")
         
         var index = 0
@@ -74,7 +68,6 @@ class GameVC : UIViewController
             var cardView = cardViews[index]
             
             setCardView(cardView: &cardView, by: card)
-//            cardView.setNeedsDisplay()
             
             // Add Tap Gesture to each View
             let tap = UITapGestureRecognizer(target: self, action: #selector(gameVC(didTapObjectByGestureRecognizer:)))
@@ -115,11 +108,10 @@ class GameVC : UIViewController
                let card  = gameSet.displayedCards[index]
             {
                 gameSet.select(card: card)
-                updateUIFromModel()
+                synchrounizeButtonCards()
             }
         }
     }
-    
 }
 
 

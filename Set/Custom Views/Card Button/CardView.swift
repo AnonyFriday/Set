@@ -31,7 +31,7 @@ class CardView: UIView
         return currentShapes
 
     }
-    
+
     private lazy var stack = UIStackView(arrangedSubviews: shapes)
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

@@ -28,7 +28,7 @@ class GameSet: Checkable
     //MARK: Initializer
     required init()
     {
-        setDisplayCard(with: 42)
+        setDisplayCard(with: 12)
     }
     
     

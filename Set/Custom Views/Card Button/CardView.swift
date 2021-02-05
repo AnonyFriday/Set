@@ -39,33 +39,27 @@ class CardView: UIView
     }
     
     
+    //MARK: Draw method
     override func draw(_ rect: CGRect) {
-        print("Yess")
         stack.removeFromSuperview()
         
         stack = UIStackView(arrangedSubviews: shapes)
         stack.translatesAutoresizingMaskIntoConstraints = false
         
         stack.axis = .vertical
-        stack.spacing = frame.height/20
+        stack.spacing = bounds.height/20
         stack.distribution = .fillEqually
         addSubview(stack)
         
         // constrains
         NSLayoutConstraint.activate([
-            stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -frame.width * 0.2),
-            stack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: frame.width * 0.2),
+            stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -bounds.width * 0.2),
+            stack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: bounds.width * 0.2),
             stack.heightAnchor.constraint(equalToConstant: bounds.height * CGFloat(shapes.count) / 3 - bounds.height * 0.2),
             stack.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
     
-    
-    //MARK: Configure ShapeViews
-    fileprivate func configureShapeViews() {
-
-        
-    }
 }
 
 //MARK: Extension
@@ -84,19 +78,5 @@ extension CardView {
     }
 }
 
-extension UIStackView {
-    func addArrangedSubviews(views: [UIView]) {
-        for view in views {
-            self.addArrangedSubview(view)
-        }
-        
-    }
-    
-    func removeArrangedSubviews(views: [UIView]) {
-        for view in views {
-            self.removeArrangedSubview(view)
-        }
-        
-    }
-}
+
 

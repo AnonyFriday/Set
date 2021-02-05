@@ -15,6 +15,7 @@
 		5C63A7FF25B82A890054729C /* GameSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C63A7FE25B82A890054729C /* GameSet.swift */; };
 		5C67111525BBD36400F86269 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67111425BBD36400F86269 /* UIButton+Ext.swift */; };
 		5C75836425CBB872000ACD14 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75836325CBB872000ACD14 /* UIView+Ext.swift */; };
+		5CA0BEC225CD7EB100C3ADD6 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA0BEC125CD7EB100C3ADD6 /* UIStackView+Ext.swift */; };
 		5CCCF0EF25BA48C2007D0ECF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF0EE25BA48C2007D0ECF /* Card.swift */; };
 		5CCCF0F225BA48CA007D0ECF /* CardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF0F125BA48CA007D0ECF /* CardDeck.swift */; };
 		5CCCF0FA25BA492B007D0ECF /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF0F925BA492B007D0ECF /* GameVC.swift */; };
@@ -39,6 +40,7 @@
 		5C63A7FE25B82A890054729C /* GameSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSet.swift; sourceTree = "<group>"; };
 		5C67111425BBD36400F86269 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		5C75836325CBB872000ACD14 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		5CA0BEC125CD7EB100C3ADD6 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 		5CCCF0EE25BA48C2007D0ECF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		5CCCF0F125BA48CA007D0ECF /* CardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeck.swift; sourceTree = "<group>"; };
 		5CCCF0F925BA492B007D0ECF /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				5CCCF11325BAAC68007D0ECF /* Collection+Ext.swift */,
 				5C67111425BBD36400F86269 /* UIButton+Ext.swift */,
 				5C75836325CBB872000ACD14 /* UIView+Ext.swift */,
+				5CA0BEC125CD7EB100C3ADD6 /* UIStackView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				5C63A7EA25B82A560054729C /* SceneDelegate.swift in Sources */,
 				5CCCF10C25BA6518007D0ECF /* Int+Ext.swift in Sources */,
 				5CD5F89B25CA849D005F6CFA /* CardDeckContainerView.swift in Sources */,
+				5CA0BEC225CD7EB100C3ADD6 /* UIStackView+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

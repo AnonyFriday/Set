@@ -7,11 +7,6 @@
 
 import UIKit
 
-//
-//@objc protocol GameVCDelegate: class {
-//    @objc func gameVC(gameVC: GameVC, didTapButtonCard: CardButton)
-////    gameVC(gameVC: GameVC, did
-//}
 
 class GameVC : UIViewController
 {
@@ -23,7 +18,10 @@ class GameVC : UIViewController
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet weak var drawThreeCardsLabel: UIButton!
     
+    private var selectedCardViews : [CardView] = [CardView]()
+    
     override func viewDidLoad() {
+        initialSetup()
         updateUIFromModel()
     }
     
@@ -32,24 +30,24 @@ class GameVC : UIViewController
     }
     
     
-//
-//    @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
-//    {
-//        gameSet?.drawThreeMoreCards()
-//        updateUIFromModel()
-//    }
-//
-//    @IBAction func touchUpNewGame(_ sender: UIButton) {
-//        gameSet?.makeNewGame()
-//        updateUIFromModel()
-//    }
-//
-//    @IBAction func touchUpButtonCard(_ sender: UIButton)
-//    {
-//        guard let index = customButtonCard.firstIndex(of: sender),
-//              let card = gameSet?.displayedCards[index]
-//        else { return }
-//        gameSet!.select(card: card) // we got the selectedCard
+    //
+    //    @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
+    //    {
+    //        gameSet?.drawThreeMoreCards()
+    //        updateUIFromModel()
+    //    }
+    //
+    //    @IBAction func touchUpNewGame(_ sender: UIButton) {
+    //        gameSet?.makeNewGame()
+    //        updateUIFromModel()
+    //    }
+    //
+    //    @IBAction func touchUpButtonCard(_ sender: UIButton)
+    //    {
+    //        guard let index = customButtonCard.firstIndex(of: sender),
+    //              let card = gameSet?.displayedCards[index]
+    //        else { return }
+    //        gameSet!.select(card: card) // we got the selectedCard
     //        updateUIFromModel()
     //    }
     //
@@ -59,42 +57,67 @@ class GameVC : UIViewController
     
     
     //MARK: Synchronize the View and Model
-   
+    
     
     func updateUIFromModel()
     {
-        
         scoreLabel.text = "Score: \(gameSet!.scorePoint)"
-        cardDeckContainerView.addCardButtonToGrid(byAmount: 2)
         
-        synchrounizeButtonCards(fromCards: gameSet!.displayedCards, applyToButtonCards: &cardDeckContainerView.cardButtons)
-   
+        for card in cardDeckContainerView.cardViews {
+            if selectedCardViews.contains(card) {
+                card.layer.borderWidth = 2
+                card.layer.borderColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
+                selectedCardViews.remove(at: selectedCardViews.firstIndex(of: card)!)
+            } else {
+                card.layer.borderWidth = 0
+            }
+        }
+        
     }
     
     
-    fileprivate func synchrounizeButtonCards(fromCards cards: [Card], applyToButtonCards buttonCards: inout [CardButton])
+    fileprivate func initialSetup() {
+        cardDeckContainerView.addCardViewToGrid(byAmount: 12)
+        synchrounizeButtonCards(fromCards: gameSet!.displayedCards, applyToCardViews: &cardDeckContainerView.cardViews)
+    }
+    
+    
+    fileprivate func synchrounizeButtonCards(fromCards cards: [Card], applyToCardViews cardViews: inout [CardView])
     {
         var index = 0
-        while index < cards.count && index < buttonCards.count {
-            buttonCards[index].color          =  cards[index].color
-            buttonCards[index].numberOfShape  =  cards[index].quantity
-            buttonCards[index].symbolShape    =  cards[index].shape
-            buttonCards[index].shading        =  cards[index].shading
+        while index < cards.count && index < cardViews.count {
+            cardViews[index].color          =  cards[index].color
+            cardViews[index].numberOfShape  =  cards[index].quantity
+            cardViews[index].symbolShape    =  cards[index].shape
+            cardViews[index].shading        =  cards[index].shading
             
-            let tap = UITapGestureRecognizer(target: self, action: #selector(gameVC(gameVC:didTapButtonCard:)))
-            buttonCards[index].addGestureRecognizer(tap)
+            // Add Tap Gesture to each View
+            let tap = UITapGestureRecognizer(target: self, action: #selector(gameVC(didTapObjectByGestureRecognizer:)))
+            cardViews[index].addGestureRecognizer(tap)
             index += 1
         }
     }
     
-    @objc func gameVC(gameVC: GameVC, didTapButtonCard: CardButton) {
-        print("Hello")
+    @objc func gameVC(didTapObjectByGestureRecognizer recognier: UIGestureRecognizer?)
+    {
+        if let cardView = (recognier as? UITapGestureRecognizer)?.view as? CardView
+        {
+            if cardDeckContainerView.cardViews.contains(cardView),
+               let index = cardDeckContainerView.cardViews.firstIndex(of: cardView),
+               let card  = gameSet?.displayedCards[index]
+            {
+                gameSet?.select(card: card)
+                selectedCardViews.append(cardView)
+                updateUIFromModel()
+            }
+        }
     }
     
-    
-    
+}
 
-    //
+
+
+//
 //
 //    //MARK: Configure Collection Buttons
 //    func configureCollectionButtons()
@@ -120,14 +143,7 @@ class GameVC : UIViewController
 //            }
 //        }
 //    }
-}
 
-//extension GameVC: GameVCDelegate {
-//    func gameVC(gameVC: GameVC, didTapButtonCard: CardButton) {
-//        print("Hello")
-//    }
-//    
-//    
-//    
-//    
-//}
+
+
+

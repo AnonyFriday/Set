@@ -9,44 +9,44 @@ import UIKit
 
 class CardDeckContainerView: UIView {
     
-    var cardButtons = [CardButton]()
+    var cardViews = [CardView]()
     private(set) var grid        : Grid = Grid(layout: .aspectRatio(4/5))
     
     
     //MARK: View Life Cycle
     override func layoutSubviews() {
         super.layoutSubviews()
-        configureCardButtons()
+        configureCardViews()
     }
     
     
-    fileprivate func configureCardButtons() {
+    fileprivate func configureCardViews() {
         grid.frame = bounds.inset(by: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
         
-        for (index, button) in cardButtons.enumerated() {
+        for (index, cardView) in cardViews.enumerated() {
             if let frame = grid[index] {
-                button.frame    = frame.insetBy(dx: bounds.width * 0.025, dy: bounds.height * 0.025)
-                button.layer.borderWidth = 1
-                button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-                button.backgroundColor   = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                button.layer.cornerRadius = 10
+                cardView.frame    = frame.insetBy(dx: bounds.width * 0.025, dy: bounds.height * 0.025)
+                cardView.layer.borderWidth = 1
+                cardView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                cardView.backgroundColor   = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                cardView.layer.cornerRadius = 10
             }
         }
     }
     
     
     //MARK: Add Card To Grid
-    func addCardButtonToGrid(byAmount amount: Int = 3) {
+    func addCardViewToGrid(byAmount amount: Int = 3) {
         
         // Map those button with its initializer
-        let amountButtons = (0..<amount).map { _ in CardButton() }
+        let amountButtons = (0..<amount).map { _ in CardView() }
         print(amountButtons[1])
         for button in amountButtons {
             addSubview(button)
         }
         
-        cardButtons     += amountButtons
-        grid.cellCount   = cardButtons.count
+        cardViews     += amountButtons
+        grid.cellCount   = cardViews.count
         setNeedsLayout() // update Layout
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class CardButton: UIView
+class CardView: UIView
 {
     //MARK: Properties
     var numberOfShape : Attribute!  = .one { didSet {setNeedsDisplay()}}
@@ -54,14 +54,10 @@ class CardButton: UIView
         stackViewOfShapeViews.contentMode  = .scaleAspectFit //TODO: Change the scale ratio of the stack view
         addSubview(stackViewOfShapeViews)
     }
-    
-    
-    
-
 }
 
 //MARK: Extension
-extension CardButton {
+extension CardView {
     enum ScreenRatio {
         static let stackViewInsetByDxRatio: CGFloat = 0.1
         static let stackViewInsetByDyRatio: CGFloat = 0.1

@@ -54,7 +54,7 @@ class GameSet: Checkable
         
         // Deselecting the already existed Card
         if selectedCards.contains(card) {
-            selectedCards.remove(at: selectedCards.firstIndex(of: card)!)
+            selectedCards.removeAll(where: {$0 == card})
             scorePoint -= 1
             return
         }

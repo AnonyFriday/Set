@@ -22,7 +22,7 @@
 		5CCCF10C25BA6518007D0ECF /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF10B25BA6518007D0ECF /* Int+Ext.swift */; };
 		5CCCF11425BAAC68007D0ECF /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCF11325BAAC68007D0ECF /* Collection+Ext.swift */; };
 		5CD5F89B25CA849D005F6CFA /* CardDeckContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F89A25CA849D005F6CFA /* CardDeckContainerView.swift */; };
-		5CD5F89E25CA84D8005F6CFA /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F89D25CA84D8005F6CFA /* CardButton.swift */; };
+		5CD5F89E25CA84D8005F6CFA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F89D25CA84D8005F6CFA /* CardView.swift */; };
 		5CD5F8A825CA896E005F6CFA /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F8A725CA896E005F6CFA /* Grid.swift */; };
 		5CD5F8AC25CAB94F005F6CFA /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F8AB25CAB94F005F6CFA /* ShapeView.swift */; };
 		5CD5F8B225CAC326005F6CFA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD5F8B125CAC326005F6CFA /* Constants.swift */; };
@@ -46,7 +46,7 @@
 		5CCCF10B25BA6518007D0ECF /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		5CCCF11325BAAC68007D0ECF /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
 		5CD5F89A25CA849D005F6CFA /* CardDeckContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckContainerView.swift; sourceTree = "<group>"; };
-		5CD5F89D25CA84D8005F6CFA /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
+		5CD5F89D25CA84D8005F6CFA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5CD5F8A725CA896E005F6CFA /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		5CD5F8AB25CAB94F005F6CFA /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		5CD5F8B125CAC326005F6CFA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		5CD5F8AE25CABD2D005F6CFA /* Card Button */ = {
 			isa = PBXGroup;
 			children = (
-				5CD5F89D25CA84D8005F6CFA /* CardButton.swift */,
+				5CD5F89D25CA84D8005F6CFA /* CardView.swift */,
 				5CD5F8AB25CAB94F005F6CFA /* ShapeView.swift */,
 			);
 			path = "Card Button";
@@ -287,7 +287,7 @@
 				5C63A7FF25B82A890054729C /* GameSet.swift in Sources */,
 				5CCCF10525BA5DE3007D0ECF /* Attribute.swift in Sources */,
 				5CD5F8B225CAC326005F6CFA /* Constants.swift in Sources */,
-				5CD5F89E25CA84D8005F6CFA /* CardButton.swift in Sources */,
+				5CD5F89E25CA84D8005F6CFA /* CardView.swift in Sources */,
 				5CD5F8AC25CAB94F005F6CFA /* ShapeView.swift in Sources */,
 				5C67111525BBD36400F86269 /* UIButton+Ext.swift in Sources */,
 				5CD5F8A825CA896E005F6CFA /* Grid.swift in Sources */,

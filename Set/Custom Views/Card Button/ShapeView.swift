@@ -42,9 +42,7 @@ class ShapeView: UIView {
             path.addLine(to: CGPoint(x: bounds.width / 2, y: bounds.height * 1/5))
             path.addLine(to: CGPoint(x: bounds.width, y: bounds.height * 4/5))
             path.close()
-        case .none:
-            path = UIBezierPath()
-        }
+        case .none: path = UIBezierPath() }
     
         
         // Color
@@ -58,8 +56,7 @@ class ShapeView: UIView {
         case .three: /** Green*/
             UIColor.systemGreen.setFill()
             UIColor.systemGreen.setStroke()
-        case .none: break
-        }
+        case .none: break }
         
         
         // Shadding
@@ -84,10 +81,7 @@ class ShapeView: UIView {
             
             stripe.stroke()
             path.stroke()
-            
-            
-        case .none: break
-        }
+        case .none: break}
         
     }
     

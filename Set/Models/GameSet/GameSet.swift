@@ -22,11 +22,11 @@ class GameSet: Checkable
     private(set) var scorePoint: Int = 0
     private(set) var deckCards = CardDeck()
     private(set) var selectedCards = [Card]()
-    private(set) var displayedCards = [Card]()
+    private(set) var displayedCards = [Card?]()
     
     
     //MARK: Initializer
-    required init?()
+    required init()
     {
         setDisplayCard(with: 12)
     }
@@ -35,31 +35,21 @@ class GameSet: Checkable
     //MARK: Select Card
     func select(card: Card)
     {
-        // Check the set is the selectedCards equals to 3, the selected Card is either inside the selectedCards or not
-        guard selectedCards.count != 3 else {
-            if checkIfMakeSet(of: selectedCards)
-            {
-                // Map those matched cards into the new card extracted from the cards deck, if those cards are in selectedCards then map it to the new one else stay in the line
-                if !deckCards.totalCards.isEmpty {
-                    displayedCards = displayedCards.compactMap{ selectedCards.contains($0) ? deckCards.drawRandomCard() : $0}
-                }
-                
-                scorePoint += 5
-            }
-            
-            else { scorePoint -= 3 }
-            selectedCards.removeAll()
-            return
-        }
-        
-        // Deselecting the already existed Card
-        if selectedCards.contains(card) {
-            selectedCards.removeAll(where: {$0 == card})
+        guard !selectedCards.contains(card) else {
+            selectedCards.remove(at: selectedCards.firstIndex(of: card)!)
             scorePoint -= 1
             return
         }
         
         selectedCards.append(card)
+        if selectedCards.count == 3 {
+            if checkIfMakeSet(of: selectedCards) {
+                displayedCards = displayedCards.map {
+                    guard let card = $0 else { return $0 }
+                    return selectedCards.contains(card) ? deckCards.drawRandomCard() : $0
+                }
+            }
+        }
     }
     
     

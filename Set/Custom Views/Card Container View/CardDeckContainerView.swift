@@ -22,25 +22,22 @@ class CardDeckContainerView: UIView {
     
     fileprivate func configureCardViews() {
         grid.frame = bounds.inset(by: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
-        
+
         for (index, cardView) in cardViews.enumerated() {
-            if let frame = grid[index] {
-                cardView.frame    = frame.insetBy(dx: bounds.width * 0.025, dy: bounds.height * 0.025)
-                cardView.layer.borderWidth = 1
-                cardView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            if let cardViewFrame = grid[index] {
+                cardView.frame             = cardViewFrame.inset(by: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
                 cardView.backgroundColor   = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                cardView.layer.cornerRadius = 10
+                cardView.layer.cornerRadius = 12
             }
         }
     }
     
     
-    //MARK: Add Card To Grid
+    //MARK: Insert Card To Grid
     func addCardViewToGrid(byAmount amount: Int = 3) {
         
         // Map those button with its initializer
         let amountButtons = (0..<amount).map { _ in CardView() }
-        print(amountButtons[1])
         for button in amountButtons {
             addSubview(button)
         }
@@ -48,6 +45,13 @@ class CardDeckContainerView: UIView {
         cardViews     += amountButtons
         grid.cellCount   = cardViews.count
         setNeedsLayout() // update Layout
+    }
+    
+    //MARK: Remove Card From Grid
+    /// If being matched as SET
+    /// Synchronize with quantity in DisplayedCard in Model
+    func removeCardViewFromGrid(){
+       
     }
 }
 

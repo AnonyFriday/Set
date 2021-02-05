@@ -18,8 +18,6 @@ class GameVC : UIViewController
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet weak var drawThreeCardsLabel: UIButton!
     
-    private var selectedCardViews : [CardView] = [CardView]()
-    
     override func viewDidLoad() {
         initialSetup()
         updateUIFromModel()
@@ -52,44 +50,62 @@ class GameVC : UIViewController
     //    }
     //
     //
+    
+    
+    
+    
+    
+    
+    
     //MARK: Update UI From Model
-    
-    
-    
-    //MARK: Synchronize the View and Model
-    
-    
     func updateUIFromModel()
     {
-        scoreLabel.text = "Score: \(gameSet!.scorePoint)"
+        scoreLabel.text = "Score: \(gameSet.scorePoint)"
         
-        for card in cardDeckContainerView.cardViews {
-            if selectedCardViews.contains(card) {
-                card.layer.borderWidth = 2
-                card.layer.borderColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
-                selectedCardViews.remove(at: selectedCardViews.firstIndex(of: card)!)
+        // Updated UI when User select Card
+        // Synchronize Card with Card View
+        
+        for index in gameSet.displayedCards.indices {
+            let (card, cardView) = (gameSet.displayedCards[index], cardDeckContainerView.cardViews[index])
+            
+            guard let notNilCard = card else {
+                cardView.isHidden = true
+                return
+            }
+            
+            print(gameSet.selectedCards)
+            
+            if gameSet.selectedCards.contains(notNilCard) {
+                cardView.layer.borderColor = UIColor.systemRed.cgColor
+                cardView.layer.borderWidth = 10
             } else {
-                card.layer.borderWidth = 0
+                cardView.layer.borderColor = UIColor.clear.cgColor
             }
         }
+        
         
     }
     
     
     fileprivate func initialSetup() {
         cardDeckContainerView.addCardViewToGrid(byAmount: 12)
-        synchrounizeButtonCards(fromCards: gameSet!.displayedCards, applyToCardViews: &cardDeckContainerView.cardViews)
+        synchrounizeButtonCards(fromCards: gameSet.displayedCards, applyToCardViews: &cardDeckContainerView.cardViews)
     }
     
     
-    fileprivate func synchrounizeButtonCards(fromCards cards: [Card], applyToCardViews cardViews: inout [CardView])
+    
+    //MARK: Synchronize the View and Model
+    fileprivate func synchrounizeButtonCards(fromCards cards: [Card?], applyToCardViews cardViews: inout [CardView])
     {
+        assert(cards.count == cardViews.count, "Both number of elements of each array has to be equal")
+        
         var index = 0
         while index < cards.count && index < cardViews.count {
-            cardViews[index].color          =  cards[index].color
-            cardViews[index].numberOfShape  =  cards[index].quantity
-            cardViews[index].symbolShape    =  cards[index].shape
-            cardViews[index].shading        =  cards[index].shading
+          
+            cardViews[index].color          =  cards[index]?.color
+            cardViews[index].numberOfShape  =  cards[index]?.quantity
+            cardViews[index].symbolShape    =  cards[index]?.shape
+            cardViews[index].shading        =  cards[index]?.shading
             
             // Add Tap Gesture to each View
             let tap = UITapGestureRecognizer(target: self, action: #selector(gameVC(didTapObjectByGestureRecognizer:)))
@@ -98,16 +114,17 @@ class GameVC : UIViewController
         }
     }
     
+    
+    //MARK: Select Card
     @objc func gameVC(didTapObjectByGestureRecognizer recognier: UIGestureRecognizer?)
     {
         if let cardView = (recognier as? UITapGestureRecognizer)?.view as? CardView
         {
             if cardDeckContainerView.cardViews.contains(cardView),
                let index = cardDeckContainerView.cardViews.firstIndex(of: cardView),
-               let card  = gameSet?.displayedCards[index]
+               let card  = gameSet.displayedCards[index]
             {
-                gameSet?.select(card: card)
-                selectedCardViews.append(cardView)
+                gameSet.select(card: card)
                 updateUIFromModel()
             }
         }

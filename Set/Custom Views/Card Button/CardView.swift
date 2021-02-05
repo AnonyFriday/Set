@@ -11,10 +11,10 @@ import UIKit
 class CardView: UIView
 {
     //MARK: Properties
-    var numberOfShape : Attribute!  = .one { didSet {setNeedsDisplay()}}
-    var color : Attribute!          = .one { didSet {setNeedsDisplay()}}
-    var shading : Attribute!        = .one { didSet {setNeedsDisplay()}}
-    var symbolShape : Attribute!    = .one { didSet {setNeedsDisplay()}}
+    var numberOfShape : Attribute?  = .one { didSet {setNeedsDisplay()}}
+    var color : Attribute?          = .one { didSet {setNeedsDisplay()}}
+    var shading : Attribute?        = .one { didSet {setNeedsDisplay()}}
+    var symbolShape : Attribute?    = .one { didSet {setNeedsDisplay()}}
         
     var shapes : [ShapeView]! {
         var shapes = [ShapeView]()
@@ -24,6 +24,7 @@ class CardView: UIView
             newShape.shading        = shading
             newShape.symbolShape    = symbolShape
             newShape.isOpaque       = false
+            newShape.contentMode    = .redraw
             shapes.append(newShape)
         }
         return shapes
@@ -51,7 +52,8 @@ class CardView: UIView
         stackViewOfShapeViews.frame = bounds.insetBy(dx: stackViewInsetByDx, dy: stackViewInsetByDy)
         stackViewOfShapeViews.axis = .vertical
         stackViewOfShapeViews.distribution = .fillEqually
-        stackViewOfShapeViews.contentMode  = .scaleAspectFit //TODO: Change the scale ratio of the stack view
+        stackViewOfShapeViews.spacing      = bounds.height / 16
+        //TODO: Change the scale ratio of the stack view
         addSubview(stackViewOfShapeViews)
     }
 }

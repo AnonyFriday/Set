@@ -19,15 +19,11 @@ class GameVC : UIViewController
     @IBOutlet weak var drawThreeCardsLabel: UIButton!
     
     override func viewDidLoad() {
-        initialSetup()
-        updateUIFromModel()
+        cardDeckContainerView.addCardViewToGrid(byAmount: 42)
+        synchrounizeButtonCards(fromCards: gameSet.displayedCards, applyToCardViews: &cardDeckContainerView.cardViews)
     }
     
-    @objc func touchUpButtonCard() {
-        print("Hello")
-    }
-    
-    
+
     //
     //    @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
     //    {
@@ -53,46 +49,18 @@ class GameVC : UIViewController
     
     
     
-    
-    
-    
-    
     //MARK: Update UI From Model
     func updateUIFromModel()
     {
         scoreLabel.text = "Score: \(gameSet.scorePoint)"
         
-        // Updated UI when User select Card
-        // Synchronize Card with Card View
-        
         for index in gameSet.displayedCards.indices {
-            let (card, cardView) = (gameSet.displayedCards[index], cardDeckContainerView.cardViews[index])
+            print("\n\n",gameSet.displayedCards,"\n\n")
+            var (card, cardView) = (gameSet.displayedCards[index], cardDeckContainerView.cardViews[index])
             
-            guard let notNilCard = card else {
-                cardView.isHidden = true
-                return
-            }
-            
-            print(gameSet.selectedCards)
-            
-            if gameSet.selectedCards.contains(notNilCard) {
-                cardView.layer.borderColor = UIColor.systemRed.cgColor
-                cardView.layer.borderWidth = 10
-            } else {
-                cardView.layer.borderColor = UIColor.clear.cgColor
-            }
+            setCardView(cardView: &cardView, by: card)
         }
-        
-        
     }
-    
-    
-    fileprivate func initialSetup() {
-        cardDeckContainerView.addCardViewToGrid(byAmount: 12)
-        synchrounizeButtonCards(fromCards: gameSet.displayedCards, applyToCardViews: &cardDeckContainerView.cardViews)
-    }
-    
-    
     
     //MARK: Synchronize the View and Model
     fileprivate func synchrounizeButtonCards(fromCards cards: [Card?], applyToCardViews cardViews: inout [CardView])
@@ -102,15 +70,36 @@ class GameVC : UIViewController
         var index = 0
         while index < cards.count && index < cardViews.count {
           
-            cardViews[index].color          =  cards[index]?.color
-            cardViews[index].numberOfShape  =  cards[index]?.quantity
-            cardViews[index].symbolShape    =  cards[index]?.shape
-            cardViews[index].shading        =  cards[index]?.shading
+            let card = cards[index]
+            var cardView = cardViews[index]
+            
+            setCardView(cardView: &cardView, by: card)
             
             // Add Tap Gesture to each View
             let tap = UITapGestureRecognizer(target: self, action: #selector(gameVC(didTapObjectByGestureRecognizer:)))
             cardViews[index].addGestureRecognizer(tap)
             index += 1
+        }
+    }
+    
+    
+    fileprivate func setCardView( cardView: inout CardView, by card: Card?)
+    {
+        guard let card = card else {
+            cardView.removeFromSuperview()
+            return
+        }
+        
+        cardView.color          = card.color
+        cardView.symbolShape    = card.shape
+        cardView.shading        = card.shading
+        cardView.numberOfShape  = card.quantity
+        
+        if gameSet.selectedCards.contains(card) {
+            cardView.layer.borderColor = UIColor.systemRed.cgColor
+            cardView.layer.borderWidth = 5
+        } else {
+            cardView.layer.borderColor = UIColor.clear.cgColor
         }
     }
     

@@ -28,7 +28,7 @@ class GameSet: Checkable
     //MARK: Initializer
     required init()
     {
-        setDisplayCard(with: 12)
+        setDisplayCard(with: 42)
     }
     
     
@@ -42,13 +42,19 @@ class GameSet: Checkable
         }
         
         selectedCards.append(card)
+        print(selectedCards)
         if selectedCards.count == 3 {
             if checkIfMakeSet(of: selectedCards) {
                 displayedCards = displayedCards.map {
-                    guard let card = $0 else { return $0 }
+                    guard let card = $0 else { return nil }
                     return selectedCards.contains(card) ? deckCards.drawRandomCard() : $0
                 }
+                scorePoint += 5
+            } else {
+                scorePoint -= 3
             }
+            
+            selectedCards.removeAll()
         }
     }
     

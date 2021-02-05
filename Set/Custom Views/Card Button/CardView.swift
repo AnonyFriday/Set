@@ -11,10 +11,10 @@ import UIKit
 class CardView: UIView
 {
     //MARK: Properties
-    var numberOfShape : Attribute?  = .one { didSet {setNeedsDisplay()}}
-    var color : Attribute?          = .one { didSet {setNeedsDisplay()}}
-    var shading : Attribute?        = .one { didSet {setNeedsDisplay()}}
-    var symbolShape : Attribute?    = .one { didSet {setNeedsDisplay()}}
+    var numberOfShape : Attribute!  = .one { didSet {setNeedsDisplay(); setNeedsLayout()}}
+    var color : Attribute!          = .one { didSet {setNeedsDisplay(); setNeedsLayout()}}
+    var shading : Attribute!        = .one { didSet {setNeedsDisplay(); setNeedsLayout()}}
+    var symbolShape : Attribute!    = .one { didSet {setNeedsDisplay(); setNeedsLayout()}}
         
     var shapes : [ShapeView]! {
         var shapes = [ShapeView]()
@@ -25,6 +25,7 @@ class CardView: UIView
             newShape.symbolShape    = symbolShape
             newShape.isOpaque       = false
             newShape.contentMode    = .redraw
+            newShape.setNeedsDisplay()
             shapes.append(newShape)
         }
         return shapes

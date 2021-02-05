@@ -10,7 +10,7 @@ import UIKit
 class CardDeckContainerView: UIView {
     
     var cardViews = [CardView]()
-    private(set) var grid        : Grid = Grid(layout: .aspectRatio(4/5))
+    private var grid        : Grid = Grid(layout: .aspectRatio(4/5))
     
     
     //MARK: View Life Cycle

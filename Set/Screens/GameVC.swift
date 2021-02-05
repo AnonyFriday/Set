@@ -53,7 +53,7 @@ class GameVC : UIViewController
     func updateUIFromModel()
     {
         scoreLabel.text = "Score: \(gameSet.scorePoint)"
-        
+    
         for index in gameSet.displayedCards.indices {
             print("\n\n",gameSet.displayedCards,"\n\n")
             var (card, cardView) = (gameSet.displayedCards[index], cardDeckContainerView.cardViews[index])
@@ -74,6 +74,7 @@ class GameVC : UIViewController
             var cardView = cardViews[index]
             
             setCardView(cardView: &cardView, by: card)
+//            cardView.setNeedsDisplay()
             
             // Add Tap Gesture to each View
             let tap = UITapGestureRecognizer(target: self, action: #selector(gameVC(didTapObjectByGestureRecognizer:)))

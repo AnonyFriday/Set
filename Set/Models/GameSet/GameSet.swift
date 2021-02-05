@@ -42,9 +42,10 @@ class GameSet: Checkable
         }
         
         selectedCards.append(card)
-        print(selectedCards)
+ 
         if selectedCards.count == 3 {
             if checkIfMakeSet(of: selectedCards) {
+
                 displayedCards = displayedCards.map {
                     guard let card = $0 else { return nil }
                     return selectedCards.contains(card) ? deckCards.drawRandomCard() : $0
@@ -97,3 +98,11 @@ extension Checkable
 }
 
 
+
+extension Array where Element: Hashable{
+    func difference(from other: [Element]) -> [Element] {
+        let thisSet = Set(self)
+        let otherSet = Set(other)
+        return Array(thisSet.symmetricDifference(otherSet))
+    }
+}

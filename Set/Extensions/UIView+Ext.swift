@@ -11,8 +11,4 @@ extension UIView {
     func addSubviews(views: UIView...) {
         for view in views { addSubview(view)}
     }
-    
-    func removeViewsFromSubView(views: UIView) {
-        
-    }
 }

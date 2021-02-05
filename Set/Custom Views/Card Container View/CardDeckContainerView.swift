@@ -12,7 +12,6 @@ class CardDeckContainerView: UIView {
     var cardViews = [CardView]()
     private var grid        : Grid = Grid(layout: .aspectRatio(4/5))
     
-    
     //MARK: View Life Cycle
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -27,7 +26,8 @@ class CardDeckContainerView: UIView {
             if let cardViewFrame = grid[index] {
                 cardView.frame             = cardViewFrame.inset(by: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
                 cardView.backgroundColor   = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                cardView.layer.cornerRadius = 12
+                cardView.layer.cornerRadius = 10
+                cardView.clipsToBounds      = true
             }
         }
     }

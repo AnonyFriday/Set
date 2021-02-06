@@ -24,6 +24,7 @@ class GameVC : UIViewController
             /// Swipe Recognizer
             let swipe    = UISwipeGestureRecognizer(target: self, action: #selector(gameVC(didTapObjectByGestureRecognizer:)))
             swipe.direction = [.up]
+            cardDeckContainerView.addGestureRecognizer(swipe)
         }
     }
     
@@ -72,7 +73,7 @@ class GameVC : UIViewController
         
         var index = 0
         while index < cards.count && index < cardViews.count {
-          
+            
             let card = cards[index]
             var cardView = cardViews[index]
             
@@ -113,19 +114,32 @@ class GameVC : UIViewController
     }
     
     
-    //MARK: Select Card
+    //MARK: Centerpoint function to recognize UIGestureRecognizer
     @objc func gameVC(didTapObjectByGestureRecognizer recognier: UIGestureRecognizer?)
     {
-        if let cardView = (recognier as? UITapGestureRecognizer)?.view as? CardView
+        /// Tap gesture
+        switch recognier
         {
-            if cardDeckContainerView.cardViews.contains(cardView),
-               let index = cardDeckContainerView.cardViews.firstIndex(of: cardView),
-               let card  = gameSet.displayedCards[index]
-            {
-                gameSet.select(card: card)
+            case is UITapGestureRecognizer:
+                if let cardView = recognier?.view as? CardView {
+                    if cardDeckContainerView.cardViews.contains(cardView),
+                       let index = cardDeckContainerView.cardViews.firstIndex(of: cardView),
+                       let card  = gameSet.displayedCards[index]
+                    {
+                        gameSet.select(card: card)
+                        updateUIFromModel()
+                    }
+                }
+            case is UISwipeGestureRecognizer:
+                gameSet.drawThreeMoreCards()
+                cardDeckContainerView.addCardViewToGrid(byAmount: 3)
                 updateUIFromModel()
-            }
+            case is UIRotationGestureRecognizer: return
+            default: return
         }
+        
+        
+        
     }
 }
 

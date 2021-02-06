@@ -9,7 +9,7 @@ import UIKit
 
 class CardDeckContainerView: UIView {
     
-    var cardViews = [CardView]()
+    var cardViews                  = [CardView]()
     private var grid        : Grid = Grid(layout: .aspectRatio(4/5))
     
     //MARK: View Life Cycle
@@ -37,21 +37,27 @@ class CardDeckContainerView: UIView {
     func addCardViewToGrid(byAmount amount: Int = 3) {
         
         // Map those button with its initializer
-        let amountButtons = (0..<amount).map { _ in CardView() }
-        for button in amountButtons {
-            addSubview(button)
+        let amountCardViews = (0..<amount).map { _ in CardView() }
+        for cardView in amountCardViews {
+            addSubview(cardView)
         }
         
-        cardViews     += amountButtons
+        cardViews     += amountCardViews
         grid.cellCount   = cardViews.count
         setNeedsLayout() // update Layout
     }
     
+    
     //MARK: Remove Card From Grid
-    /// If being matched as SET
-    /// Synchronize with quantity in DisplayedCard in Model
+    /// If game is reset to the newgame
     func removeCardViewFromGrid(){
-       
+        for cardView in cardViews {
+            cardView.removeFromSuperview()
+        }
+        cardViews.removeAll()
+        grid.cellCount = 0
+        setNeedsLayout()
+        
     }
 }
 

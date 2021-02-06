@@ -14,49 +14,58 @@ class GameVC : UIViewController
     lazy private var gameSet = GameSet()
     
     // MARK: Interface Builder - View
-    @IBOutlet private weak var cardDeckContainerView : CardDeckContainerView!
+    @IBOutlet private weak var cardDeckContainerView : CardDeckContainerView! {
+        didSet {
+            /// Rotation Recognizer
+            let rotation = UIRotationGestureRecognizer(target: self, action: #selector(gameVC(didTapObjectByGestureRecognizer:)))
+            rotation.rotation = CGFloat.pi * 2
+            cardDeckContainerView.addGestureRecognizer(rotation)
+            
+            /// Swipe Recognizer
+            let swipe    = UISwipeGestureRecognizer(target: self, action: #selector(gameVC(didTapObjectByGestureRecognizer:)))
+            swipe.direction = [.up]
+        }
+    }
+    
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet weak var drawThreeCardsLabel: UIButton!
     
+    
+    //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         cardDeckContainerView.addCardViewToGrid(byAmount: 12)
-        synchrounizeButtonCards()
+        updateUIFromModel()
     }
     
-
     
-        @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
-        {
-            gameSet.drawThreeMoreCards()
-            cardDeckContainerView.addCardViewToGrid(byAmount: 3)
-            synchrounizeButtonCards()
-        }
-    //
-    //    @IBAction func touchUpNewGame(_ sender: UIButton) {
-    //        gameSet?.makeNewGame()
-    //        updateUIFromModel()
-    //    }
-    //
-    //    @IBAction func touchUpButtonCard(_ sender: UIButton)
-    //    {
-    //        guard let index = customButtonCard.firstIndex(of: sender),
-    //              let card = gameSet?.displayedCards[index]
-    //        else { return }
-    //        gameSet!.select(card: card) // we got the selectedCard
-    //        updateUIFromModel()
-    //    }
-    //
-    //
+    // MARK: Draw 3 Random Cards
+    @IBAction func touchUpDrawThreeCards(_ sender: UIButton)
+    {
+        gameSet.drawThreeMoreCards()
+        cardDeckContainerView.addCardViewToGrid(byAmount: 3)
+        updateUIFromModel()
+    }
     
     
+    // MARK: Get New Game
+    @IBAction func touchUpNewGame(_ sender: UIButton) {
+        gameSet.makeNewGame()
+        cardDeckContainerView.removeCardViewFromGrid()
+        cardDeckContainerView.addCardViewToGrid(byAmount: 12)
+        updateUIFromModel()
+    }
     
-    //MARK: Update UI From Model
+    
     
     //MARK: Synchronize the View and Model
-    fileprivate func synchrounizeButtonCards()
+    fileprivate func updateUIFromModel()
     {
+        
+        // Update Score Label
         scoreLabel.text = "Score: \(gameSet.scorePoint)"
         
+        
+        // Update Cardview on Board
         let cards = gameSet.displayedCards
         let cardViews = cardDeckContainerView.cardViews
         assert(cards.count == cardViews.count, "Both number of elements of each array has to be equal")
@@ -75,9 +84,11 @@ class GameVC : UIViewController
             index += 1
         }
         
-        if gameSet.deckCards.totalCards.isEmpty {
-            drawThreeCardsLabel.isEnabled = false
-        }
+        // Update drawThreeCardsLabel
+        gameSet.deckCards.totalCards.isEmpty
+            ? (drawThreeCardsLabel.isEnabled = false)
+            : (drawThreeCardsLabel.isEnabled = true)
+        
     }
     
     
@@ -112,7 +123,7 @@ class GameVC : UIViewController
                let card  = gameSet.displayedCards[index]
             {
                 gameSet.select(card: card)
-                synchrounizeButtonCards()
+                updateUIFromModel()
             }
         }
     }
@@ -120,32 +131,6 @@ class GameVC : UIViewController
 
 
 
-//
-//
-//    //MARK: Configure Collection Buttons
-//    func configureCollectionButtons()
-//    {
-//        for button in customButtonCard
-//        {
-//            button.setAttributedTitle(NSAttributedString(string: ""), for: .normal)
-//            button.isEnabled = false
-//            button.layer.backgroundColor = UIColor.clear.cgColor
-//            button.layer.cornerRadius    = 10
-//        }
-//
-//        for index in gameSet!.displayedCards.indices
-//        {
-//            let (button, card) = (customButtonCard[index], gameSet!.displayedCards[index])
-//            if gameSet!.displayedCards.contains(card)
-//            {
-//                button.setButton(with: card)
-//                button.isEnabled = true
-//                button.backgroundColor = .white
-//                button.layer.borderColor = gameSet!.selectedCards.contains(card) ? UIColor.systemRed.cgColor : UIColor.clear.cgColor
-//                button.layer.borderWidth = 8
-//            }
-//        }
-//    }
 
 
 

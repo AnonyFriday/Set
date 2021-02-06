@@ -66,7 +66,7 @@ class ShapeView: UIView {
         case .two:  /**Fill*/
             path.fill()
         case .three: /**Striped*/
-            path.lineWidth = 0.01 * bounds.size.height
+            path.lineWidth = 0.01 * bounds.size.width
             path.addClip()
             
             let stripe = UIBezierPath()
@@ -81,6 +81,7 @@ class ShapeView: UIView {
             
             stripe.stroke()
             path.stroke()
+            
         case .none: break}
         
     }

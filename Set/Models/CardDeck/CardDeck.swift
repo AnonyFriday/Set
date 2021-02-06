@@ -11,7 +11,7 @@ import Foundation
 class CardDeck
 {
     
-    private(set) var totalCards = [Card]()
+    var totalCards = [Card]()
     
     //MARK: Initialier
     init() {

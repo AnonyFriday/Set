@@ -61,8 +61,8 @@ class GameSet: Checkable
     
     
     //MARK: Set Display Card
-    func setDisplayCard(with quanttity: Int) {
-        for _ in 0...(quanttity - 1){
+    func setDisplayCard(with quantity: Int) {
+        for _ in 0...(quantity - 1){
             displayedCards.append(deckCards.drawRandomCard()!)
         }
     }
@@ -81,6 +81,23 @@ class GameSet: Checkable
     //MARK: Draw more 3 cards
     func drawThreeMoreCards() {
         setDisplayCard(with: 3)
+    }
+    
+    //MARK: Shuffle Card Deck
+    func shuffleCardDeck() {
+        guard !displayedCards.isEmpty else { return }
+        let removedCardsFromDisplayedCards = displayedCards
+       
+        selectedCards.removeAll()
+        displayedCards.removeAll()
+        
+        for card in removedCardsFromDisplayedCards where card != nil{
+            deckCards.totalCards.append(card!)
+        }
+        
+       
+        
+        setDisplayCard(with: removedCardsFromDisplayedCards.count)
     }
 }
 

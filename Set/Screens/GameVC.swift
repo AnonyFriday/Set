@@ -114,7 +114,7 @@ class GameVC : UIViewController
     }
     
     
-    //MARK: Centerpoint function to recognize UIGestureRecognizer
+    //MARK: Centralpoint function to recognize UIGestureRecognizer
     @objc func gameVC(didTapObjectByGestureRecognizer recognier: UIGestureRecognizer?)
     {
         /// Tap gesture
@@ -134,12 +134,11 @@ class GameVC : UIViewController
                 gameSet.drawThreeMoreCards()
                 cardDeckContainerView.addCardViewToGrid(byAmount: 3)
                 updateUIFromModel()
-            case is UIRotationGestureRecognizer: return
+            case is UIRotationGestureRecognizer:
+                gameSet.shuffleCardDeck()
+                updateUIFromModel()
             default: return
         }
-        
-        
-        
     }
 }
 

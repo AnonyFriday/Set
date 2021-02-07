@@ -94,9 +94,6 @@ class GameSet: Checkable
         for card in removedCardsFromDisplayedCards where card != nil{
             deckCards.totalCards.append(card!)
         }
-        
-       
-        
         setDisplayCard(with: removedCardsFromDisplayedCards.count)
     }
 }

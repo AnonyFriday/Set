@@ -130,13 +130,26 @@ class GameVC : UIViewController
                         updateUIFromModel()
                     }
                 }
+                
             case is UISwipeGestureRecognizer:
-                gameSet.drawThreeMoreCards()
-                cardDeckContainerView.addCardViewToGrid(byAmount: 3)
-                updateUIFromModel()
+                switch recognier?.state {
+                    case .ended:
+                        gameSet.drawThreeMoreCards()
+                        cardDeckContainerView.addCardViewToGrid(byAmount: 3)
+                        updateUIFromModel()
+                    default: return
+                }
+                
             case is UIRotationGestureRecognizer:
-                gameSet.shuffleCardDeck()
-                updateUIFromModel()
+                switch recognier?.state {
+                    case .began,.changed: return
+                    case .ended:
+                        gameSet.shuffleCardDeck()
+                        updateUIFromModel()
+                    default: return
+                }
+                
+                
             default: return
         }
     }
